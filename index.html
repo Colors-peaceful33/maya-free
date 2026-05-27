@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料マヤ暦診断｜KIN番号・太陽の紋章・銀河の音を生年月日から算出</title>
+  <meta name="description" content="生年月日を入力するだけで、マヤ暦のKIN番号・太陽の紋章・ウェイブスペル・銀河の音を無料で診断。20種の紋章イラストつきで性格・才能・使命を詳しく解説します。">
+  <meta property="og:title" content="無料マヤ暦診断｜KIN番号・太陽の紋章・銀河の音を生年月日から算出">
+  <meta property="og:description" content="生年月日を入力するだけで、マヤ暦のKIN番号・太陽の紋章・銀河の音を無料で診断。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="canonical" href="https://maya-free.pages.dev/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Schema.org: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "無料マヤ暦診断",
+    "url": "https://maya-free.pages.dev/",
+    "description": "生年月日を入力するだけでKIN番号・太陽の紋章・銀河の音を無料で診断できるマヤ暦ツール",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "inLanguage": "ja"
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "マヤ暦とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "マヤ暦とは古代マヤ文明が使用していた暦体系のひとつで、現代では「ツォルキン暦」とも呼ばれる260日周期のエネルギーカレンダーです。生年月日から「KIN番号」を算出し、20種の太陽の紋章と13の銀河の音の組み合わせで、その人の性格・才能・使命を読み解きます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "KIN番号はどうやって計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "KIN番号は、生年月日をもとに専用の算出式で1〜260の番号を導き出します。このサイトでは生年月日を入力するだけで自動的にKIN番号が計算されます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "太陽の紋章と銀河の音の違いは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "太陽の紋章（1〜20）はその人の本質・才能・テーマを示し、銀河の音（1〜13）は行動パターンや人生のリズムを示します。この2つの組み合わせがKIN番号を構成しています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ウェイブスペルとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ウェイブスペルは13日間のエネルギー周期で、音1〜13の流れを司る「核となる紋章」です。自分のウェイブスペルの紋章は、潜在意識や深層の才能・テーマを表します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "マヤ暦の診断は無料ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい、このサイトでのKIN番号・太陽の紋章・銀河の音・ウェイブスペルの基本診断は完全無料です。より詳細な鑑定シート（KIN ORACLE）はご案内のリンクからご利用いただけます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "反対キン・類似キン・神秘キンとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "反対キンは自分と対極のエネルギーを持つKINで、互いに引き合い成長を促します。類似キンは同じウェイブスペルを持ち共鳴しやすいKINです。神秘キンは合わせると21になる紋章番号を持ち、深いところで補い合う関係です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "黒KINとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "黒KINとは、自分のKIN番号に130を足した（または引いた）KINで、自分の「影の課題」や深層の学びを示すとされています。意識することで魂の成長が加速すると言われています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ガイドキンとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ガイドキンはその銀河の音（トーン）に対応した「道案内役」の紋章で、同じカラーの紋章の中からその人の指針となるエネルギーを示します。高次の自己や魂のサポートを象徴します。" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ─── ヘッダー ─── -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo">
+      <span class="site-header__logo-mark">✦</span>
+      無料マヤ暦診断
+    </a>
+    <nav class="site-header__nav">
+      <a href="#diagnosis">診断する</a>
+      <a href="#seals">20の紋章</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://kin-oracle.pages.dev/oracle.html" class="site-header__nav-cta" target="_blank" rel="noopener">KIN ORACLE ↗</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ─── ヒーロー + 診断フォーム ─── -->
+<section class="hero" id="diagnosis">
+  <div class="hero__bg-deco" aria-hidden="true">
+    <div class="hero__bg-orb hero__bg-orb--1"></div>
+    <div class="hero__bg-orb hero__bg-orb--2"></div>
+    <div class="hero__bg-orb hero__bg-orb--3"></div>
+  </div>
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <p class="hero__eyebrow"><span class="hero__eyebrow-star">✦</span> 無料マヤ暦診断</p>
+      <h1 class="hero__title">生年月日から<br>あなたの<em>KIN番号</em>と<br><em>太陽の紋章</em>を診断</h1>
+      <p class="hero__sub">マヤ暦のツォルキン暦に基づいて、あなたの本質・才能・使命テーマを読み解きます。完全無料、登録不要。</p>
+    </div>
+    <div class="hero__form-wrap">
+      <div class="form-card" id="diagnosis-form-wrap">
+        <p class="form-card__label">生年月日を入力してください</p>
+        <form class="form-card__form" id="diagnosis-form" novalidate>
+          <div class="form-card__selects">
+            <div class="form-card__select-wrap">
+              <label for="f-year">年</label>
+              <select id="f-year" name="year" required>
+                <option value="">年を選択</option>
+              </select>
+            </div>
+            <div class="form-card__select-wrap">
+              <label for="f-month">月</label>
+              <select id="f-month" name="month" required>
+                <option value="">月を選択</option>
+                <option value="1">1月</option>
+                <option value="2">2月</option>
+                <option value="3">3月</option>
+                <option value="4">4月</option>
+                <option value="5">5月</option>
+                <option value="6">6月</option>
+                <option value="7">7月</option>
+                <option value="8">8月</option>
+                <option value="9">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+              </select>
+            </div>
+            <div class="form-card__select-wrap">
+              <label for="f-day">日</label>
+              <select id="f-day" name="day" required>
+                <option value="">日を選択</option>
+              </select>
+            </div>
+          </div>
+          <p class="form-card__error" id="form-error" hidden>生年月日をすべて選択してください</p>
+          <button type="submit" class="form-card__btn">
+            <span class="form-card__btn-icon">✦</span>
+            無料で診断する
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 診断結果エリア ─── -->
+<section id="result-area" class="result-section" hidden>
+  <div class="container">
+    <h2 class="result-section__title">あなたのマヤ暦鑑定結果</h2>
+    <p class="result-section__date" id="result-date"></p>
+
+    <!-- メイン結果カード -->
+    <div class="result-main">
+      <!-- 紋章ビジュアル -->
+      <div class="result-seal-col">
+        <div class="result-seal-card" id="result-seal-card">
+          <img id="result-seal-img" src="" alt="" class="result-seal-img">
+          <div class="result-seal-meta">
+            <p class="result-seal-meta__label">太陽の紋章</p>
+            <p class="result-seal-meta__name" id="result-seal-name"></p>
+          </div>
+        </div>
+        <div class="result-kin-badge">
+          <span class="result-kin-badge__label">KIN</span>
+          <span class="result-kin-badge__num" id="result-kin-num"></span>
+        </div>
+      </div>
+
+      <!-- サブ情報 -->
+      <div class="result-info-col">
+        <div class="result-tags">
+          <div class="result-tag">
+            <span class="result-tag__label">銀河の音</span>
+            <span class="result-tag__val" id="result-tone"></span>
+          </div>
+          <div class="result-tag">
+            <span class="result-tag__label">ウェイブスペル</span>
+            <span class="result-tag__val" id="result-wavespell"></span>
+          </div>
+          <div class="result-tag">
+            <span class="result-tag__label">ガイド</span>
+            <span class="result-tag__val" id="result-guide"></span>
+          </div>
+        </div>
+
+        <!-- 関係紋章 -->
+        <div class="result-relations">
+          <p class="result-relations__title">KINの関係性</p>
+          <div class="result-relations__grid">
+            <div class="result-relation-item">
+              <span class="result-relation-item__role">反対キン</span>
+              <span class="result-relation-item__name" id="result-antipode"></span>
+            </div>
+            <div class="result-relation-item">
+              <span class="result-relation-item__role">類似キン</span>
+              <span class="result-relation-item__name" id="result-analog"></span>
+            </div>
+            <div class="result-relation-item">
+              <span class="result-relation-item__role">神秘キン</span>
+              <span class="result-relation-item__name" id="result-occult"></span>
+            </div>
+            <div class="result-relation-item">
+              <span class="result-relation-item__role">黒KIN</span>
+              <span class="result-relation-item__name" id="result-black"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.result-main -->
+
+    <!-- 解説カード群 -->
+    <div class="reading-cards">
+      <!-- 太陽の紋章解説 -->
+      <div class="reading-card">
+        <div class="reading-card__head">
+          <span class="reading-card__icon">☽</span>
+          <h3 class="reading-card__title">太陽の紋章の解説</h3>
+          <button class="reading-card__toggle" aria-expanded="false" aria-label="開閉">
+            <span class="reading-card__toggle-icon">+</span>
+          </button>
+        </div>
+        <div class="reading-card__body">
+          <p class="reading-card__preview" id="seal-reading-preview"></p>
+          <div class="reading-card__full" id="seal-reading-full" hidden></div>
+        </div>
+      </div>
+
+      <!-- ウェイブスペル解説 -->
+      <div class="reading-card">
+        <div class="reading-card__head">
+          <span class="reading-card__icon">◇</span>
+          <h3 class="reading-card__title">ウェイブスペル（潜在意識）の解説</h3>
+          <button class="reading-card__toggle" aria-expanded="false" aria-label="開閉">
+            <span class="reading-card__toggle-icon">+</span>
+          </button>
+        </div>
+        <div class="reading-card__body">
+          <p class="reading-card__preview" id="wave-reading-preview"></p>
+          <div class="reading-card__full" id="wave-reading-full" hidden></div>
+        </div>
+      </div>
+
+      <!-- 銀河の音解説 -->
+      <div class="reading-card">
+        <div class="reading-card__head">
+          <span class="reading-card__icon">✦</span>
+          <h3 class="reading-card__title">銀河の音の解説</h3>
+          <button class="reading-card__toggle" aria-expanded="false" aria-label="開閉">
+            <span class="reading-card__toggle-icon">+</span>
+          </button>
+        </div>
+        <div class="reading-card__body">
+          <p class="reading-card__preview" id="tone-reading-preview"></p>
+          <div class="reading-card__full" id="tone-reading-full" hidden></div>
+        </div>
+      </div>
+    </div><!-- /.reading-cards -->
+
+    <!-- 結果CTA -->
+    <div class="result-cta">
+      <p class="result-cta__lead">より詳しい鑑定シートはこちら</p>
+      <div class="result-cta__btns">
+        <a href="https://lin.ee/PLACEHOLDER" class="cta-btn cta-btn--line" target="_blank" rel="noopener">
+          公式LINEで無料特典を受け取る →
+        </a>
+        <a href="https://kin-oracle.pages.dev/oracle.html" class="cta-btn cta-btn--oracle" target="_blank" rel="noopener">
+          KIN ORACLEで詳細シートを作成 →
+        </a>
+      </div>
+    </div>
+
+    <!-- 再診断 -->
+    <div style="text-align:center;margin-top:2rem;">
+      <button class="form-card__btn form-card__btn--ghost" id="retry-btn">
+        別の生年月日で診断する
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── マヤ暦とは？ ─── -->
+<section class="info-section" id="about-maya">
+  <div class="container info-section__inner">
+    <div class="section-header">
+      <span class="section-header__en">About Maya Calendar</span>
+      <h2 class="section-header__ja">マヤ暦とは？</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="info-cols">
+      <div class="info-col">
+        <p>マヤ暦とは、古代メソアメリカのマヤ文明が使用していた暦体系のひとつ「ツォルキン暦」をベースにした、260日周期のエネルギーカレンダーです。現代では自己理解・人間関係・開運のツールとして広く活用されています。</p>
+        <p>ツォルキン暦は「20の太陽の紋章」と「13の銀河の音」を掛け合わせた260通りのKIN（キン）で構成されています。人は生まれながらに固有のKIN番号を持ち、それぞれの紋章と音の組み合わせが、その人の本質・才能・使命・課題を象徴するとされています。</p>
+      </div>
+      <div class="info-col">
+        <p>西洋占星術や数秘術と異なり、マヤ暦は「競争ではなく共存」「ジャッジではなく理解」の視点で個人のエネルギーを読み解くのが特徴です。260日という周期は、人間の妊娠期間にも重なり、自然と宇宙のリズムを反映した深い叡智が込められています。</p>
+        <p>自分のKINを知ることで、「なぜこのような性格なのか」「どんな環境で輝けるのか」「人間関係でなぜ摩擦が起きるのか」といった問いへのヒントが得られます。自己受容と他者理解の入り口として、ぜひ活用してください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 太陽の紋章 20種 一覧 ─── -->
+<section class="seals-section" id="seals">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header__en">20 Solar Seals</span>
+      <h2 class="section-header__ja">太陽の紋章 20種</h2>
+      <div class="section-header__line"></div>
+      <p class="section-header__sub">あなたの紋章をクリックすると詳細ページへ移動します</p>
+    </div>
+    <div class="seals-grid">
+
+      <!-- 赤い龍 -->
+      <a href="seal/akai-ryu.html" class="seal-card seal-card--red">
+        <img src="assets/images/seals/赤い龍.png" alt="赤い龍" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">01</span>
+          <p class="seal-card__name">赤い龍</p>
+          <p class="seal-card__key">始まり・生命・責任</p>
+        </div>
+      </a>
+
+      <!-- 白い風 -->
+      <a href="seal/shiroi-kaze.html" class="seal-card seal-card--white">
+        <img src="assets/images/seals/白い風.png" alt="白い風" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">02</span>
+          <p class="seal-card__name">白い風</p>
+          <p class="seal-card__key">伝達・感性・言葉</p>
+        </div>
+      </a>
+
+      <!-- 青い夜 -->
+      <a href="seal/aoi-yoru.html" class="seal-card seal-card--blue">
+        <img src="assets/images/seals/青い夜.png" alt="青い夜" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">03</span>
+          <p class="seal-card__name">青い夜</p>
+          <p class="seal-card__key">夢・豊かさ・神秘</p>
+        </div>
+      </a>
+
+      <!-- 黄色い種 -->
+      <a href="seal/kiiroi-tane.html" class="seal-card seal-card--yellow">
+        <img src="assets/images/seals/黄色い種.png" alt="黄色い種" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">04</span>
+          <p class="seal-card__name">黄色い種</p>
+          <p class="seal-card__key">知識・開花・集中</p>
+        </div>
+      </a>
+
+      <!-- 赤い蛇 -->
+      <a href="seal/akai-hebi.html" class="seal-card seal-card--red">
+        <img src="assets/images/seals/赤い蛇.png" alt="赤い蛇" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">05</span>
+          <p class="seal-card__name">赤い蛇</p>
+          <p class="seal-card__key">本能・情熱・生命力</p>
+        </div>
+      </a>
+
+      <!-- 白い世界の橋渡し -->
+      <a href="seal/shiroi-hashi.html" class="seal-card seal-card--white">
+        <img src="assets/images/seals/白い世界の橋渡し.png" alt="白い世界の橋渡し" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">06</span>
+          <p class="seal-card__name">白い世界の橋渡し</p>
+          <p class="seal-card__key">死と再生・橋渡し</p>
+        </div>
+      </a>
+
+      <!-- 青い手 -->
+      <a href="seal/aoi-te.html" class="seal-card seal-card--blue">
+        <img src="assets/images/seals/青い手.png" alt="青い手" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">07</span>
+          <p class="seal-card__name">青い手</p>
+          <p class="seal-card__key">癒し・達成・行動</p>
+        </div>
+      </a>
+
+      <!-- 黄色い星 -->
+      <a href="seal/kiiroi-hoshi.html" class="seal-card seal-card--yellow">
+        <img src="assets/images/seals/黄色い星.png" alt="黄色い星" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">08</span>
+          <p class="seal-card__name">黄色い星</p>
+          <p class="seal-card__key">美・芸術・調和</p>
+        </div>
+      </a>
+
+      <!-- 赤い月 -->
+      <a href="seal/akai-tsuki.html" class="seal-card seal-card--red">
+        <img src="assets/images/seals/赤い月.png" alt="赤い月" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">09</span>
+          <p class="seal-card__name">赤い月</p>
+          <p class="seal-card__key">浄化・流れ・感受性</p>
+        </div>
+      </a>
+
+      <!-- 白い犬 -->
+      <a href="seal/shiroi-inu.html" class="seal-card seal-card--white">
+        <img src="assets/images/seals/白い犬.png" alt="白い犬" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">10</span>
+          <p class="seal-card__name">白い犬</p>
+          <p class="seal-card__key">愛・誠実・忠実</p>
+        </div>
+      </a>
+
+      <!-- 青い猿 -->
+      <a href="seal/aoi-saru.html" class="seal-card seal-card--blue">
+        <img src="assets/images/seals/青い猿.png" alt="青い猿" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">11</span>
+          <p class="seal-card__name">青い猿</p>
+          <p class="seal-card__key">遊び・魔法・創造</p>
+        </div>
+      </a>
+
+      <!-- 黄色い人 -->
+      <a href="seal/kiiroi-hito.html" class="seal-card seal-card--yellow">
+        <img src="assets/images/seals/黄色い人.png" alt="黄色い人" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">12</span>
+          <p class="seal-card__name">黄色い人</p>
+          <p class="seal-card__key">自由意志・知恵・影響</p>
+        </div>
+      </a>
+
+      <!-- 赤い空歩く人 -->
+      <a href="seal/akai-sorayuku.html" class="seal-card seal-card--red">
+        <img src="assets/images/seals/赤い空歩く人.png" alt="赤い空歩く人" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">13</span>
+          <p class="seal-card__name">赤い空歩く人</p>
+          <p class="seal-card__key">探求・奉仕・空間</p>
+        </div>
+      </a>
+
+      <!-- 白い魔法使い -->
+      <a href="seal/shiroi-mahoutsukai.html" class="seal-card seal-card--white">
+        <img src="assets/images/seals/白い魔法使い.png" alt="白い魔法使い" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">14</span>
+          <p class="seal-card__name">白い魔法使い</p>
+          <p class="seal-card__key">魔法・受容・永遠</p>
+        </div>
+      </a>
+
+      <!-- 青い鷲 -->
+      <a href="seal/aoi-washi.html" class="seal-card seal-card--blue">
+        <img src="assets/images/seals/青い鷲.png" alt="青い鷲" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">15</span>
+          <p class="seal-card__name">青い鷲</p>
+          <p class="seal-card__key">ビジョン・創造性・先見</p>
+        </div>
+      </a>
+
+      <!-- 黄色い戦士 -->
+      <a href="seal/kiiroi-senshi.html" class="seal-card seal-card--yellow">
+        <img src="assets/images/seals/黄色い戦士.png" alt="黄色い戦士" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">16</span>
+          <p class="seal-card__name">黄色い戦士</p>
+          <p class="seal-card__key">勇気・探求・知性</p>
+        </div>
+      </a>
+
+      <!-- 赤い地球 -->
+      <a href="seal/akai-chikyuu.html" class="seal-card seal-card--red">
+        <img src="assets/images/seals/赤い地球.png" alt="赤い地球" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">17</span>
+          <p class="seal-card__name">赤い地球</p>
+          <p class="seal-card__key">進化・同調・ナビゲーション</p>
+        </div>
+      </a>
+
+      <!-- 白い鏡 -->
+      <a href="seal/shiroi-kagami.html" class="seal-card seal-card--white">
+        <img src="assets/images/seals/白い鏡.png" alt="白い鏡" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">18</span>
+          <p class="seal-card__name">白い鏡</p>
+          <p class="seal-card__key">反映・真実・終わりなし</p>
+        </div>
+      </a>
+
+      <!-- 青い嵐 -->
+      <a href="seal/aoi-arashi.html" class="seal-card seal-card--blue">
+        <img src="assets/images/seals/青い嵐.png" alt="青い嵐" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">19</span>
+          <p class="seal-card__name">青い嵐</p>
+          <p class="seal-card__key">変容・エネルギー・自己生成</p>
+        </div>
+      </a>
+
+      <!-- 黄色い太陽 -->
+      <a href="seal/kiiroi-taiyou.html" class="seal-card seal-card--yellow">
+        <img src="assets/images/seals/黄色い太陽.png" alt="黄色い太陽" class="seal-card__img" loading="lazy">
+        <div class="seal-card__body">
+          <span class="seal-card__num">20</span>
+          <p class="seal-card__name">黄色い太陽</p>
+          <p class="seal-card__key">悟り・生命・普遍的な火</p>
+        </div>
+      </a>
+
+    </div><!-- /.seals-grid -->
+  </div>
+</section>
+
+<!-- ─── 銀河の音とは？ ─── -->
+<section class="info-section info-section--alt" id="about-tone">
+  <div class="container info-section__inner">
+    <div class="section-header">
+      <span class="section-header__en">Galactic Tone</span>
+      <h2 class="section-header__ja">銀河の音とは？</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="info-body">
+      <p>銀河の音（トーン）は1〜13の数字で表され、太陽の紋章とセットであなたのKIN番号を構成します。音は「行動パターン」や「人生のリズム」「魂の学びのスタイル」を示すもので、音1が「始まり・統一」を象徴するなら、音13は「宇宙的な完成・手放し」を象徴します。</p>
+      <p>たとえば音1の人は「引き寄せ」と「新しい始まり」に強いエネルギーを持ち、自然とリーダーや先駆者的な立場になりやすいとされます。音5の人は「パワフルな意志と根拠」、音12の人は「理解と複雑さの統合」がテーマとなります。13の音はそれぞれ異なる学びのステージを表しており、自分の音を理解することで日々の行動指針が見えてきます。</p>
+      <div class="tone-chips">
+        <span class="tone-chip" data-tone="1">音1<small>引き寄せ</small></span>
+        <span class="tone-chip" data-tone="2">音2<small>選択</small></span>
+        <span class="tone-chip" data-tone="3">音3<small>絆</small></span>
+        <span class="tone-chip" data-tone="4">音4<small>形成</small></span>
+        <span class="tone-chip" data-tone="5">音5<small>授権</small></span>
+        <span class="tone-chip" data-tone="6">音6<small>律動</small></span>
+        <span class="tone-chip" data-tone="7">音7<small>共鳴</small></span>
+        <span class="tone-chip" data-tone="8">音8<small>統合</small></span>
+        <span class="tone-chip" data-tone="9">音9<small>太陽</small></span>
+        <span class="tone-chip" data-tone="10">音10<small>惑星</small></span>
+        <span class="tone-chip" data-tone="11">音11<small>スペクトル</small></span>
+        <span class="tone-chip" data-tone="12">音12<small>水晶</small></span>
+        <span class="tone-chip" data-tone="13">音13<small>宇宙</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KINの関係性とは？ ─── -->
+<section class="info-section" id="about-relations">
+  <div class="container info-section__inner">
+    <div class="section-header">
+      <span class="section-header__en">KIN Relations</span>
+      <h2 class="section-header__ja">KINの関係性とは？</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="relations-grid">
+      <div class="relation-block relation-block--antipode">
+        <h3 class="relation-block__title">反対キン<span class="relation-block__en">Antipode</span></h3>
+        <p>あなたと対極のエネルギーを持つ紋章。互いに引き合い、刺激し合って成長を促します。苦手なタイプほど実は反対キンが多く、関わることで自己の欠けた部分を補い合えます。</p>
+      </div>
+      <div class="relation-block relation-block--analog">
+        <h3 class="relation-block__title">類似キン<span class="relation-block__en">Analog</span></h3>
+        <p>同じウェイブスペル（波の流れ）の中で共鳴し合うキン。自然と息が合い、価値観や目標が一致しやすい関係。協力し合えば相乗効果が生まれます。</p>
+      </div>
+      <div class="relation-block relation-block--occult">
+        <h3 class="relation-block__title">神秘キン<span class="relation-block__en">Occult</span></h3>
+        <p>紋章番号を合わせると21になる組み合わせ。表面的には似ていないのに不思議と惹かれ合う「運命的」な関係。深いところで補い合い、お互いの可能性を引き出します。</p>
+      </div>
+      <div class="relation-block relation-block--guide">
+        <h3 class="relation-block__title">ガイドキン<span class="relation-block__en">Guide</span></h3>
+        <p>あなたの銀河の音に対応する「道案内役」の紋章。同じ色の紋章グループから選ばれ、高次の自己や魂のサポートを象徴します。人生の方向性が迷ったときに意識するヒントになります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 黒KIN・極性KIN・拡張KINとは？ ─── -->
+<section class="info-section info-section--alt" id="about-special">
+  <div class="container info-section__inner">
+    <div class="section-header">
+      <span class="section-header__en">Black KIN &amp; More</span>
+      <h2 class="section-header__ja">黒KIN・極性KIN・拡張KINとは？</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="special-blocks">
+      <div class="special-block">
+        <h3 class="special-block__title">黒KIN（シャドーKIN）</h3>
+        <p>自分のKIN番号に130を足した（または引いた）KINを「黒KIN」と呼びます。影・課題・深層の学びを象徴し、認識して受け入れることで魂の成長が加速するとされています。たとえばKIN1の人の黒KINはKIN131です。</p>
+      </div>
+      <div class="special-block">
+        <h3 class="special-block__title">極性KIN</h3>
+        <p>13の音が持つ「陰と陽」の極性。奇数の音（1・3・5・7・9・11・13）は「磁気的（インプット）」、偶数の音（2・4・6・8・10・12）は「電気的（アウトプット）」とされ、それぞれ異なる受け取り方・発信の仕方を持ちます。</p>
+      </div>
+      <div class="special-block">
+        <h3 class="special-block__title">拡張KIN（年齢別KINシフト）</h3>
+        <p>誕生年から現在までの年数に105を掛けたKINを加算（mod 260）することで、今年の自分を司る「年齢別KIN」が算出されます。人生の各年齢において主テーマとなるエネルギーが変化し、成長のサイクルを読み解くことができます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── よくある質問 FAQ ─── -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header__en">FAQ</span>
+      <h2 class="section-header__ja">よくある質問</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="faq__list">
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          マヤ暦とは何ですか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>マヤ暦とは古代マヤ文明が使用していた暦体系のひとつで、現代では「ツォルキン暦」とも呼ばれる260日周期のエネルギーカレンダーです。生年月日から「KIN番号」を算出し、20種の太陽の紋章と13の銀河の音の組み合わせで、その人の性格・才能・使命を読み解きます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          KIN番号はどうやって計算しますか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>KIN番号は、生年月日をもとに専用の算出式で1〜260の番号を導き出します。このサイトでは生年月日を入力するだけで自動的にKIN番号が計算されます。複雑な計算は必要ありません。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          太陽の紋章と銀河の音の違いは？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>太陽の紋章（1〜20）はその人の本質・才能・テーマを示し、銀河の音（1〜13）は行動パターンや人生のリズムを示します。この2つの組み合わせがKIN番号を構成しています。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          ウェイブスペルとは何ですか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>ウェイブスペルは13日間のエネルギー周期で、音1〜13の流れを司る「核となる紋章」です。自分のウェイブスペルの紋章は、潜在意識や深層の才能・テーマを表します。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          このサイトの診断は完全無料ですか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>はい、完全無料・登録不要でご利用いただけます。KIN番号・太陽の紋章・銀河の音・ウェイブスペル・ガイド・反対キン・類似キン・神秘キンの基本診断がすべて無料で表示されます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          反対キン・類似キン・神秘キンとは何ですか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>反対キンは自分と対極のエネルギーを持つKINで、互いに引き合い成長を促します。類似キンは同じウェイブスペルを持ち共鳴しやすいKINです。神秘キンは合わせると21になる紋章番号を持ち、深いところで補い合う関係です。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          黒KINとは何ですか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>黒KINとは、自分のKIN番号に130を足した（または引いた）KINで、自分の「影の課題」や深層の学びを示すとされています。意識することで魂の成長が加速すると言われています。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          <span class="faq-q-sep"></span>
+          KIN ORACLEとはどう違いますか？
+          <span class="faq-item__arrow">▾</span>
+        </button>
+        <div class="faq-item__a" hidden>
+          <p>このサイトは基本的なKIN診断をウェブ上で無料提供するツールです。KIN ORACLEはマヤ暦アドバイザー向けのプロ仕様鑑定シート自動生成ツールで、年齢別KINシフト、家族の関係図、60年年表なども含む詳細な印刷用PDFが作成できます。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── フッター CTA ─── -->
+<section class="footer-cta">
+  <div class="container footer-cta__inner">
+    <p class="footer-cta__lead">✦ さらに深くマヤ暦を学びたい方へ</p>
+    <h2 class="footer-cta__title">あなたの可能性を、もっと詳しく</h2>
+    <div class="footer-cta__btns">
+      <a href="https://lin.ee/PLACEHOLDER" class="cta-btn cta-btn--line" target="_blank" rel="noopener">
+        公式LINEで無料特典を受け取る →
+      </a>
+      <a href="https://kin-oracle.pages.dev/oracle.html" class="cta-btn cta-btn--oracle" target="_blank" rel="noopener">
+        KIN ORACLE で詳細鑑定シートを作成 →
+      </a>
+      <a href="https://PLACEHOLDER-BLOG/" class="cta-btn cta-btn--blog" target="_blank" rel="noopener">
+        マヤ暦をもっと深く学ぶ → ブログへ
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── フッター ─── -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <a href="/" class="site-footer__logo">
+      <span>✦</span> 無料マヤ暦診断
+    </a>
+    <nav class="site-footer__nav">
+      <a href="#diagnosis">診断する</a>
+      <a href="#seals">20の紋章</a>
+      <a href="#faq">よくある質問</a>
+      <a href="https://kin-oracle.pages.dev/oracle.html" target="_blank" rel="noopener">KIN ORACLE</a>
+    </nav>
+    <p class="site-footer__copy">&copy; 2025 KIN ORACLE Lite. All rights reserved.</p>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
