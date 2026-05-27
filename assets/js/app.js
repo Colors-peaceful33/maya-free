@@ -151,10 +151,13 @@ function renderResult(year, month, day) {
   const waveReading = WAVESPELL_READINGS[wavespell] || '';
   const toneReading = TONE_READINGS[tone] || '';
 
-  const PREVIEW_LEN = 120;
+  const PREVIEW_LEN = 180;
   setReading('seal-reading', sealReading, PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`);
   setReading('wave-reading', waveReading, PREVIEW_LEN, null);
   setReading('tone-reading', toneReading, PREVIEW_LEN, null);
+
+  // 5つの城
+  setCastle(kin);
 
   // 表示切替
   document.getElementById('result-area').hidden = false;
@@ -185,6 +188,34 @@ function setReading(prefix, fullText, previewLen, moreHref) {
     link.textContent = `「${prefix.includes('seal') ? '太陽の紋章' : ''}」の詳細ページを見る →`;
     full.appendChild(link);
   }
+}
+
+// ── 5つの城 ────────────────────────────────────────────────
+const CASTLES = [
+  { name: '赤い東の城', range: '1〜52',   theme: '誕生と出発', color: 'red' },
+  { name: '白い北の城', range: '53〜104', theme: '精錬と浄化', color: 'white' },
+  { name: '青い西の城', range: '105〜156',theme: '変容と魔法', color: 'blue' },
+  { name: '黄色い南の城',range: '157〜208',theme: '成熟と開花', color: 'yellow' },
+  { name: '緑の中心の城',range: '209〜260',theme: '統合と悟り', color: 'green' },
+];
+
+function getCastle(kin) {
+  if (kin <= 52)  return CASTLES[0];
+  if (kin <= 104) return CASTLES[1];
+  if (kin <= 156) return CASTLES[2];
+  if (kin <= 208) return CASTLES[3];
+  return CASTLES[4];
+}
+
+function setCastle(kin) {
+  const el = document.getElementById('result-castle');
+  if (!el) return;
+  const c = getCastle(kin);
+  el.innerHTML = `
+    <span class="result-castle__name">${c.name}</span>
+    <span class="result-castle__theme">${c.theme}</span>
+    <span class="result-castle__range">KIN ${c.range}</span>`;
+  el.className = `result-castle result-castle--${c.color}`;
 }
 
 // ── アコーディオン制御 ────────────────────────────────────

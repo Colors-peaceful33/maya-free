@@ -155,6 +155,7 @@
             <span class="form-card__btn-icon">✦</span>
             無料で診断する
           </button>
+          <p class="form-card__privacy">入力された情報は診断目的にのみ使用し、サーバーには送信されません。<a href="https://kin-oracle.pages.dev/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a></p>
         </form>
       </div>
     </div>
@@ -200,6 +201,9 @@
             <span class="result-tag__val" id="result-guide"></span>
           </div>
         </div>
+
+        <!-- 5つの城 -->
+        <div id="result-castle" class="result-castle"></div>
 
         <!-- 関係紋章 -->
         <div class="result-relations">
@@ -616,6 +620,113 @@
   </div>
 </section>
 
+<!-- ─── 5つの城 ─── -->
+<section class="info-section" id="about-castles">
+  <div class="container info-section__inner">
+    <div class="section-header">
+      <span class="section-header__en">5 Castles</span>
+      <h2 class="section-header__ja">5つの城とは？</h2>
+      <div class="section-header__line"></div>
+      <p class="section-header__sub">260日のツォルキン暦は、52KINずつ5つの「城」に分かれています</p>
+    </div>
+    <div class="castles-grid">
+      <div class="castle-block castle-block--red">
+        <div class="castle-block__header">
+          <span class="castle-block__icon">🔴</span>
+          <div>
+            <h3 class="castle-block__title">赤い東の城</h3>
+            <span class="castle-block__kin">KIN 1〜52</span>
+          </div>
+        </div>
+        <p class="castle-block__theme">「誕生と出発」のエネルギー。新しいことを始め、種を蒔く時期。赤い龍から始まり、勇気を持って踏み出す力が宿ります。</p>
+      </div>
+      <div class="castle-block castle-block--white">
+        <div class="castle-block__header">
+          <span class="castle-block__icon">⬜</span>
+          <div>
+            <h3 class="castle-block__title">白い北の城</h3>
+            <span class="castle-block__kin">KIN 53〜104</span>
+          </div>
+        </div>
+        <p class="castle-block__theme">「精錬と浄化」のエネルギー。内側を磨き、本質を見極める時期。不要なものを手放し、真実に向き合う力が宿ります。</p>
+      </div>
+      <div class="castle-block castle-block--blue">
+        <div class="castle-block__header">
+          <span class="castle-block__icon">🔵</span>
+          <div>
+            <h3 class="castle-block__title">青い西の城</h3>
+            <span class="castle-block__kin">KIN 105〜156</span>
+          </div>
+        </div>
+        <p class="castle-block__theme">「変容と魔法」のエネルギー。変化を受け入れ、深く変容する時期。青い手から始まる癒しと達成の流れが宿ります。</p>
+      </div>
+      <div class="castle-block castle-block--yellow">
+        <div class="castle-block__header">
+          <span class="castle-block__icon">🟡</span>
+          <div>
+            <h3 class="castle-block__title">黄色い南の城</h3>
+            <span class="castle-block__kin">KIN 157〜208</span>
+          </div>
+        </div>
+        <p class="castle-block__theme">「成熟と開花」のエネルギー。努力が実を結び、才能が花開く時期。地に足をつけながら豊かさを受け取る力が宿ります。</p>
+      </div>
+      <div class="castle-block castle-block--green">
+        <div class="castle-block__header">
+          <span class="castle-block__icon">💚</span>
+          <div>
+            <h3 class="castle-block__title">緑の中心の城</h3>
+            <span class="castle-block__kin">KIN 209〜260</span>
+          </div>
+        </div>
+        <p class="castle-block__theme">「統合と悟り」のエネルギー。すべてを受け入れ、次の260日サイクルへの橋渡しをする神聖な時期。完結と再生が共存します。</p>
+      </div>
+    </div>
+    <p class="castles-note">自分のKINが属する城を知ることで、あなたの生まれ持った「魂の段階」がより深く読み解けます。</p>
+  </div>
+</section>
+
+<!-- ─── 20紋章 比較早見表 ─── -->
+<section class="info-section info-section--alt" id="seal-table">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header__en">Quick Reference</span>
+      <h2 class="section-header__ja">20の紋章 早見表</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="seal-table-wrap">
+      <table class="seal-table">
+        <thead>
+          <tr>
+            <th>色</th><th>No</th><th>紋章名</th><th>キーワード</th><th>本質テーマ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="seal-table--red"><td>🔴</td><td>01</td><td><a href="seal/akai-ryu.html">赤い龍</a></td><td>始まり・生命・責任</td><td>誕生のエネルギーで道を切り開く先駆者</td></tr>
+          <tr class="seal-table--white"><td>⬜</td><td>02</td><td><a href="seal/shiroi-kaze.html">白い風</a></td><td>伝達・感性・言葉</td><td>言葉と感性で人の心に届けるメッセンジャー</td></tr>
+          <tr class="seal-table--blue"><td>🔵</td><td>03</td><td><a href="seal/aoi-yoru.html">青い夜</a></td><td>夢・豊かさ・神秘</td><td>独自の夢と目的に向かって進む探求者</td></tr>
+          <tr class="seal-table--yellow"><td>🟡</td><td>04</td><td><a href="seal/kiiroi-tane.html">黄色い種</a></td><td>知識・開花・集中</td><td>知識を深め、才能を開花させる学びの人</td></tr>
+          <tr class="seal-table--red"><td>🔴</td><td>05</td><td><a href="seal/akai-hebi.html">赤い蛇</a></td><td>本能・情熱・生命力</td><td>強烈な生命力と本能で突き進むパワフルな存在</td></tr>
+          <tr class="seal-table--white"><td>⬜</td><td>06</td><td><a href="seal/shiroi-hashi.html">白い世界の橋渡し</a></td><td>死と再生・橋渡し</td><td>縁をつなぎ、異なる世界を橋渡しする使者</td></tr>
+          <tr class="seal-table--blue"><td>🔵</td><td>07</td><td><a href="seal/aoi-te.html">青い手</a></td><td>癒し・達成・行動</td><td>手を動かし、行動を通じて癒しをもたらす</td></tr>
+          <tr class="seal-table--yellow"><td>🟡</td><td>08</td><td><a href="seal/kiiroi-hoshi.html">黄色い星</a></td><td>美・芸術・調和</td><td>美しさと芸術で世界に調和をもたらす星</td></tr>
+          <tr class="seal-table--red"><td>🔴</td><td>09</td><td><a href="seal/akai-tsuki.html">赤い月</a></td><td>浄化・流れ・感受性</td><td>感情の流れに乗り、浄化と再生を促す</td></tr>
+          <tr class="seal-table--white"><td>⬜</td><td>10</td><td><a href="seal/shiroi-inu.html">白い犬</a></td><td>愛・誠実・忠実</td><td>純粋な愛と誠実さで人を包み込む</td></tr>
+          <tr class="seal-table--blue"><td>🔵</td><td>11</td><td><a href="seal/aoi-saru.html">青い猿</a></td><td>遊び・魔法・創造</td><td>遊び心と創造力で魔法のような現実を作る</td></tr>
+          <tr class="seal-table--yellow"><td>🟡</td><td>12</td><td><a href="seal/kiiroi-hito.html">黄色い人</a></td><td>自由意志・知恵・影響</td><td>自由な意志と知恵で周囲に影響を与える</td></tr>
+          <tr class="seal-table--red"><td>🔴</td><td>13</td><td><a href="seal/akai-sorayuku.html">赤い空歩く人</a></td><td>探求・奉仕・空間</td><td>空間を越えて探求し、人々に奉仕する旅人</td></tr>
+          <tr class="seal-table--white"><td>⬜</td><td>14</td><td><a href="seal/shiroi-mahoutsukai.html">白い魔法使い</a></td><td>魔法・受容・永遠</td><td>時空を超えた魔法で現実を変容させる</td></tr>
+          <tr class="seal-table--blue"><td>🔵</td><td>15</td><td><a href="seal/aoi-washi.html">青い鷲</a></td><td>ビジョン・創造性・先見</td><td>高い視点から全体を俯瞰し未来を描く</td></tr>
+          <tr class="seal-table--yellow"><td>🟡</td><td>16</td><td><a href="seal/kiiroi-senshi.html">黄色い戦士</a></td><td>勇気・探求・知性</td><td>恐れを超えて真実を探求する知的な戦士</td></tr>
+          <tr class="seal-table--red"><td>🔴</td><td>17</td><td><a href="seal/akai-chikyuu.html">赤い地球</a></td><td>進化・同調・ナビゲーション</td><td>地球と同調し、正しい方向へ道案内する</td></tr>
+          <tr class="seal-table--white"><td>⬜</td><td>18</td><td><a href="seal/shiroi-kagami.html">白い鏡</a></td><td>反映・真実・終わりなし</td><td>鏡のように真実を映し出し、永遠に問い続ける</td></tr>
+          <tr class="seal-table--blue"><td>🔵</td><td>19</td><td><a href="seal/aoi-arashi.html">青い嵐</a></td><td>変容・エネルギー・自己生成</td><td>嵐のように変容をもたらし、自ら力を生む</td></tr>
+          <tr class="seal-table--yellow"><td>🟡</td><td>20</td><td><a href="seal/kiiroi-taiyou.html">黄色い太陽</a></td><td>悟り・生命・普遍的な火</td><td>太陽の光のように悟りと生命を照らし出す</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- ─── よくある質問 FAQ ─── -->
 <section class="faq-section" id="faq">
   <div class="container">
@@ -714,6 +825,115 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ─── 著者プロフィール ─── -->
+<section class="author-section" id="author">
+  <img src="assets/images/story/03_green_botanical_sprig.png" class="author-deco author-deco--tl" aria-hidden="true">
+  <img src="assets/images/story/03_green_botanical_sprig.png" class="author-deco author-deco--br" aria-hidden="true">
+  <img src="assets/images/story/12_gold_sparkles.png" class="author-deco author-deco--spark1" aria-hidden="true">
+  <img src="assets/images/story/12_gold_sparkles.png" class="author-deco author-deco--spark2" aria-hidden="true">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header__en">Supervisor</span>
+      <h2 class="section-header__ja">監修者プロフィール</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="author-inner">
+      <!-- 写真 -->
+      <div class="author-photo-col">
+        <div class="author-photo-wrap">
+          <img src="assets/images/profile.jpg" alt="織和 佑" class="author-photo">
+          <img src="assets/images/story/17_arch_frame.png" class="author-arch" aria-hidden="true">
+        </div>
+      </div>
+      <!-- テキスト -->
+      <div class="author-text-col">
+        <div class="author-name-block">
+          <p class="author-name-ja">織和 佑</p>
+          <p class="author-name-en">Yu Orikazu</p>
+          <p class="author-roles">マヤ暦アドバイザー / 霊視鑑定師 / シータヒーリングインストラクター / セミナー講師</p>
+          <p class="author-kin">KIN230 ｜ 白い犬 × 白い風 ｜ 音9</p>
+        </div>
+        <img src="assets/images/story/05_gold_divider.png" class="author-divider" aria-hidden="true">
+        <div class="author-stats">
+          <div class="author-stat">
+            <span class="author-stat__num">8,000<small>件以上</small></span>
+            <span class="author-stat__label">累計セッション実績</span>
+          </div>
+          <div class="author-stat">
+            <span class="author-stat__num">260<small>KIN</small></span>
+            <span class="author-stat__label">全紋章の鑑定経験</span>
+          </div>
+          <div class="author-stat">
+            <span class="author-stat__num">3<small>資格</small></span>
+            <span class="author-stat__label">マヤ暦・霊視・シータ</span>
+          </div>
+        </div>
+        <div class="author-story">
+          <p>もともと霊視鑑定師として活動していた私がマヤ暦と出会ったのは、あるアドバイザーの方からセッションを受けたことがきっかけでした。エネルギーで感じ取っていたことと、マヤ暦が示す内容が驚くほど一致していて——「これは本物だ」と直感し、深く学んでアドバイザーの資格を取得しました。</p>
+          <p>累計8,000件以上のセッション経験を積む中で、私がもっとも強みを感じているのは「関係性の読み解き」です。家族・パートナー・友人・職場……人と人の間に流れるエネルギーを紐解くことで、悩みや摩擦の根本に触れることができると確信しています。</p>
+        </div>
+        <div class="author-cta-row">
+          <a href="https://enishimichi.pages.dev/" class="cta-btn cta-btn--blog" target="_blank" rel="noopener">縁道 公式サイトへ →</a>
+          <a href="https://lin.ee/PLACEHOLDER" class="cta-btn cta-btn--line" target="_blank" rel="noopener">公式LINEを見る →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 関連コンテンツ ─── -->
+<section class="related-section" id="related">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header__en">More Content</span>
+      <h2 class="section-header__ja">マヤ暦をもっと深く</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="related-grid">
+      <a href="seal/shiroi-inu.html" class="related-card">
+        <div class="related-card__img-wrap related-card__img-wrap--white">
+          <img src="assets/images/seals/白い犬.png" alt="白い犬" loading="lazy">
+        </div>
+        <div class="related-card__body">
+          <span class="related-card__tag">紋章解説</span>
+          <h3 class="related-card__title">白い犬の性格・才能・代表KIN</h3>
+          <p class="related-card__desc">愛・誠実・忠実を象徴するKIN10,30,50…の紋章。詳しい解説を読む</p>
+        </div>
+      </a>
+      <a href="seal/akai-ryu.html" class="related-card">
+        <div class="related-card__img-wrap related-card__img-wrap--red">
+          <img src="assets/images/seals/赤い龍.png" alt="赤い龍" loading="lazy">
+        </div>
+        <div class="related-card__body">
+          <span class="related-card__tag">紋章解説</span>
+          <h3 class="related-card__title">赤い龍の性格・才能・代表KIN</h3>
+          <p class="related-card__desc">始まりと生命を象徴するKIN1,21,41…の紋章。詳しい解説を読む</p>
+        </div>
+      </a>
+      <a href="seal/kiiroi-taiyou.html" class="related-card">
+        <div class="related-card__img-wrap related-card__img-wrap--yellow">
+          <img src="assets/images/seals/黄色い太陽.png" alt="黄色い太陽" loading="lazy">
+        </div>
+        <div class="related-card__body">
+          <span class="related-card__tag">紋章解説</span>
+          <h3 class="related-card__title">黄色い太陽の性格・才能・代表KIN</h3>
+          <p class="related-card__desc">悟りと普遍的な火を象徴するKIN20,40,60…の紋章。詳しい解説を読む</p>
+        </div>
+      </a>
+      <a href="https://kin-oracle.pages.dev/oracle.html" class="related-card related-card--oracle" target="_blank" rel="noopener">
+        <div class="related-card__img-wrap related-card__img-wrap--oracle">
+          <span class="related-card__oracle-icon">✦</span>
+        </div>
+        <div class="related-card__body">
+          <span class="related-card__tag related-card__tag--gold">ツール</span>
+          <h3 class="related-card__title">KIN ORACLE で詳細鑑定シートを作成</h3>
+          <p class="related-card__desc">年表・関係性・組織鑑定まで。マヤ暦アドバイザー向けプロ仕様ツール</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
