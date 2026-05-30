@@ -853,6 +853,79 @@ a { color: var(--gold-deep); }
 }
 
 /* ──────────────────────────────────────────────
+   KIN 関係性カードセクション（PNG背景版）
+   ────────────────────────────────────────────── */
+.kin-rel-section {
+  padding: 5rem 0;
+  background: var(--bg-soft);
+}
+.section-header__deco-img-wrap {
+  margin: 0 auto;
+  max-width: 280px;
+}
+.section-header__deco-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+}
+.kin-rel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.kin-rel-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.kin-rel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+}
+.kin-rel-card--red    { background-image: url('../images/card-red.png'); }
+.kin-rel-card--blue   { background-image: url('../images/card-blue.png'); }
+.kin-rel-card--purple { background-image: url('../images/card-purple.png'); }
+.kin-rel-card--gold   { background-image: url('../images/card-gold.png'); }
+
+.kin-rel-card__inner {
+  padding: 1.3rem 1.8rem 1.8rem 1.5rem;
+}
+.kin-rel-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+.kin-rel-card__icon-space {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
+.kin-rel-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+.kin-rel-card--red    .kin-rel-card__title { color: #c04040; }
+.kin-rel-card--blue   .kin-rel-card__title { color: #2d6fa5; }
+.kin-rel-card--purple .kin-rel-card__title { color: #7b52a0; }
+.kin-rel-card--gold   .kin-rel-card__title { color: #a07830; }
+
+.kin-rel-card__text {
+  font-size: 0.875rem;
+  line-height: 1.92;
+  color: #4a4040;
+}
+
+/* ──────────────────────────────────────────────
    特別 KIN ブロック
    ────────────────────────────────────────────── */
 .special-blocks {
@@ -1242,6 +1315,7 @@ a { color: var(--gold-deep); }
   .result-kin-badge { flex: 1; }
   .info-cols { grid-template-columns: 1fr; gap: 1.5rem; }
   .relations-grid { grid-template-columns: 1fr 1fr; }
+  .kin-rel-grid { grid-template-columns: 1fr 1fr; }
   .special-blocks { grid-template-columns: 1fr; }
   .seal-page-hero__inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
   .seal-page-img-col { max-width: 280px; margin: 0 auto; }
@@ -1257,6 +1331,8 @@ a { color: var(--gold-deep); }
   .result-tags { grid-template-columns: 1fr; gap: 0.4rem; }
   .result-relations__grid { grid-template-columns: 1fr; }
   .relations-grid { grid-template-columns: 1fr; }
+  .kin-rel-grid { grid-template-columns: 1fr; }
+  .kin-rel-card__icon-space { width: 50px; height: 50px; }
   .relation-nav { grid-template-columns: 1fr; }
   .result-cta__btns, .footer-cta__btns { flex-direction: column; align-items: stretch; }
   .faq-item__a { padding-left: 1.5rem; }
