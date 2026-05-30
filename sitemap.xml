@@ -8,6 +8,12 @@
   </url>
 
   <url>
+    <loc>https://maya-free.colors-peaceful33.workers.dev/tone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://maya-free.colors-peaceful33.workers.dev/seal/akai-ryu.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

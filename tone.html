@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マヤ暦「銀河の音」全13音の意味と特徴｜あなたの音はどれ？</title>
+  <meta name="description" content="マヤ暦の銀河の音（1〜13）それぞれの意味・性格・才能・行動パターンを詳しく解説。自分の音を知ることで、日々の生き方のヒントが見えてきます。">
+  <link rel="canonical" href="https://maya-free.colors-peaceful33.workers.dev/tone.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── 音ページ専用スタイル ── */
+    .tone-page-hero {
+      padding: clamp(3rem, 7vw, 6rem) 0 clamp(2rem, 5vw, 4rem);
+      background: linear-gradient(160deg, var(--pastel-sky) 0%, var(--pastel-lilac) 50%, var(--pastel-blush) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tone-page-hero__eyebrow {
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .tone-page-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .tone-page-hero__sub {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    /* ── 音カードグリッド ── */
+    .tone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    .tone-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 1px solid var(--line-soft);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .tone-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .tone-card__header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.4rem 1.6rem;
+      background: linear-gradient(135deg, var(--pastel-sky) 0%, var(--pastel-lilac) 100%);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .tone-card__img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .tone-card__meta {}
+    .tone-card__num {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .tone-card__name {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--ink);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .tone-card__keyword {
+      display: inline-block;
+      background: rgba(201, 169, 107, 0.12);
+      border: 1px solid rgba(201, 169, 107, 0.3);
+      color: var(--gold-deep);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+    }
+    .tone-card__body {
+      padding: 1.4rem 1.6rem;
+    }
+    .tone-card__text {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+    }
+
+    /* ── 戻るリンク ── */
+    .tone-back {
+      text-align: center;
+      padding: 3rem 0 5rem;
+    }
+    .tone-back a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: var(--font-serif);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+    }
+    .tone-back a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .tone-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .tone-card__img { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo">
+      <span class="site-header__logo-mark">✦</span>
+      無料マヤ暦診断
+    </a>
+    <nav class="site-header__nav">
+      <a href="/#diagnosis">診断する</a>
+      <a href="/#seals">20の紋章</a>
+      <a href="/#faq">よくある質問</a>
+      <a href="https://kin-oracle.pages.dev/oracle.html" class="site-header__nav-cta" target="_blank" rel="noopener">KIN ORACLE ↗</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="tone-page-hero">
+  <div class="container">
+    <span class="tone-page-hero__eyebrow">Galactic Tone 1–13</span>
+    <h1 class="tone-page-hero__title">銀河の音とは？<br>全13音の意味と特徴</h1>
+    <p class="tone-page-hero__sub">銀河の音（トーン）は1〜13の数字で表され、あなたの行動パターンや日々のリズム、魂の学びのスタイルを示します。自分の音を知ることで、日々の過ごし方の指針が見えてきます。</p>
+    <a href="/#diagnosis" class="cta-btn cta-btn--oracle" style="display:inline-flex;text-decoration:none;">
+      生年月日から自分の音を調べる →
+    </a>
+  </div>
+</section>
+
+<!-- 音カード一覧 -->
+<section style="background:var(--bg-soft);">
+  <div class="container">
+    <div class="tone-grid">
+
+      <!-- 音1 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/1.png" alt="音1" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 01</span>
+            <p class="tone-card__name">音1</p>
+            <span class="tone-card__keyword">引き寄せ・統一・始まり</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音1は「引き寄せ・統一・始まり」を象徴するリーダーシップの音です。意識したことが現実化しやすく、思考・言葉・感情の質が直接人生の流れをつくります。先頭に立ち、誰もが平等に参加できる場をつくる力があり、自然と人を集め・まとめるリーダー的な存在になりやすいでしょう。チャンスが来たときに迷わず動けることが成功のパターンです。「始まりのエネルギー」を大切にし、新しいことへの挑戦を恐れないことがこの音の人生を輝かせる鍵です。</p>
+        </div>
+      </div>
+
+      <!-- 音2 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/2.png" alt="音2" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 02</span>
+            <p class="tone-card__name">音2</p>
+            <span class="tone-card__keyword">選択・分析・二極化</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音2は「選択・分析・二極化」を象徴する音です。直感の精度が抜群で、二つの選択肢から正解を素早く選び取る分析力と選択能力に優れています。「はっきりしている人」と言われることが多く、物事を明確にしたいという気持ちが行動の特徴です。直感に素直に従うことが最善の判断につながりやすく、「なんとなく感じること」を大切にする練習が力を伸ばします。「自分の直感は正しい」という自己信頼を育てることがこの音の最大の開運です。</p>
+        </div>
+      </div>
+
+      <!-- 音3 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/3.png" alt="音3" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 03</span>
+            <p class="tone-card__name">音3</p>
+            <span class="tone-card__keyword">絆・つなぐ・活性化</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音3は「絆・つなぐ・活性化」を象徴する音で、人間関係の豊かさがこの音の特大の才能です。離れたものをつなぎ合わせ、バラバラなものに一体感を生み出すことが自然とできるタイプです。安心感と親近感のあるリーダーシップを持ち、チームや組織の中で参謀・まとめ役として活躍しやすいでしょう。「一人でやろうとしない・チームで動く」という意識が大きな成果につながります。人との縁を大切に育てることで次第に大きな輪が生まれていきます。</p>
+        </div>
+      </div>
+
+      <!-- 音4 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/4.png" alt="音4" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 04</span>
+            <p class="tone-card__name">音4</p>
+            <span class="tone-card__keyword">安定・形にする・専門性</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音4は「安定・形にする・専門性」を象徴する音です。職人気質の安定を好む一面と、鋭いアイデアマン・スペシャリストの顔を併せ持っています。専門家として一つの分野を深く極める生き方がとても合っており、長く同じ道を歩むほど力が増していく安定成長タイプです。形のあるものをつくる・仕組みを構築する・専門知識を体系化するという行動がこの音のエネルギーを最も活かします。安心安定の基盤を自分の手でつくることへの強い意志がこの音の魂の中心にあります。</p>
+        </div>
+      </div>
+
+      <!-- 音5 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/5.png" alt="音5" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 05</span>
+            <p class="tone-card__name">音5</p>
+            <span class="tone-card__keyword">中心・放射・指揮官</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音5は「中心・放射・指揮官」を象徴する音です。のんびりした外見に反して、自分が中心にいるという強い意識と指揮官的な気質を内側に持っています。追い詰められた状況ほど底力を発揮するタイプで、普段はゆっくり動いていても本番になると一気にスピードが出ます。自分から積極的に「中心・リーダー・発信者」のポジションに立つことで本来の力が解放されます。大きな組織の中で信頼を積み重ねながら着実に地位を固めるスタイルが合っています。</p>
+        </div>
+      </div>
+
+      <!-- 音6 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/6.png" alt="音6" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 06</span>
+            <p class="tone-card__name">音6</p>
+            <span class="tone-card__keyword">マイペース・平等・継続</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音6は「マイペース・平等・地道な継続」を象徴する音です。何があっても動じないゴーイングマイウェイの強さを持ち、人の影響をあまり受けずに自分のリズムで進んでいくタイプです。その穏やかで揺るがないペースが、気がつくと周囲を引っ張るリーダーシップになっています。地道に継続することがこの音の最大の武器で、コツコツ積み重ねることが最終的には大きな差になって現れます。この音の開運は「自分のペースを信頼し、焦らず継続すること」に尽きます。</p>
+        </div>
+      </div>
+
+      <!-- 音7 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/7.png" alt="音7" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 07</span>
+            <p class="tone-card__name">音7</p>
+            <span class="tone-card__keyword">宇宙・神秘・自己探求</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音7は「宇宙とのつながり・神秘・自己の探求」を象徴する音です。ツォルキン（260日の周期）の真ん中に位置するこの音は、宇宙の中心点とつながる特別な役割を持っています。五感が非常に鋭く、目に見えない世界・直感・霊感などへの感受性が豊かです。常に「本当の自分とは何か」という深い問いを抱え、自分探しをしながら生きる人が多い音です。概念・信念・自分の枠を意識的に広げることで宇宙とのつながりが深まり、シンクロが日常に増えていきます。</p>
+        </div>
+      </div>
+
+      <!-- 音8 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/8.png" alt="音8" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 08</span>
+            <p class="tone-card__name">音8</p>
+            <span class="tone-card__keyword">調和・共鳴・つながり</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音8は「調和・共鳴・有機的なつながり」を象徴する音です。世話焼きで面倒見のよい存在感を持ち、自然と周囲の人が集まってくるタイプです。指令塔・コーディネーターとしての才能があり、「誰に何をしてもらうか」を見極めて役割を分配する力に優れています。共鳴する人がいると一気に能力が上がるという特性があるため、気の合う仲間との協働が才能を最大化するカギになります。ワクワクすることや楽しいことを人生に積極的に取り込むことがこの音の開運行動です。</p>
+        </div>
+      </div>
+
+      <!-- 音9 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/9.png" alt="音9" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 09</span>
+            <p class="tone-card__name">音9</p>
+            <span class="tone-card__keyword">ビジョン・インスピレーション・成功</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音9は「大きなビジョン・インスピレーション・成功」を象徴する音です。成功者に多い音とされており、グランドデザインを描く力と、楽しいこと・好きなことへの引き寄せ力が特に強い音です。右脳を積極的に使うことで閃きやインスピレーションが生まれやすく、「関心があることに集中する」と驚くほどの結果が出やすいタイプです。枠を超えた発想で周囲を驚かせることが多く、関心の深い分野での圧倒的な集中と成果がこの音の最大の武器です。</p>
+        </div>
+      </div>
+
+      <!-- 音10 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/10.png" alt="音10" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 10</span>
+            <p class="tone-card__name">音10</p>
+            <span class="tone-card__keyword">完成・プロデュース・育成</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音10は「完成・プロデュース・育成」を象徴する音です。人格者が多く、プロデュース力と育成能力が20の音の中でも群を抜いて高いとされています。人を育てること・コミュニティをまとめること・イベントや企画を動かすことに高い適性があり、組織やチームに欠かせない存在になりやすいでしょう。人を育てることに喜びを感じる音で、「あの人のおかげで成長できた」と言われることがこの音の魂を深く満たします。プロデューサー・教育者として、周囲を活かしながら輝くことがこの音の使命です。</p>
+        </div>
+      </div>
+
+      <!-- 音11 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/11.png" alt="音11" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 11</span>
+            <p class="tone-card__name">音11</p>
+            <span class="tone-card__keyword">突破・解放・オリジナル</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音11は「突破・解放・オリジナル」を象徴するパワーの音です。20の音の中でも特に強いエネルギーと才能を持つとされており、能力が高いグループとリーダー性があるグループの両方に属する音です。人と同じことが嫌いでオリジナルにこだわる性質があり、「自分だけのやり方・表現・スタイル」を貫くことでこのエネルギーが最大化されます。独自の表現・芸術・クリエイティブな仕事において突出した才能が開花しやすく、「誰もやっていないこと」への挑戦がこの音の魂を喜ばせます。</p>
+        </div>
+      </div>
+
+      <!-- 音12 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/12.png" alt="音12" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 12</span>
+            <p class="tone-card__name">音12</p>
+            <span class="tone-card__keyword">協力・分かち合い・共有</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音12は「協力・分かち合い・共有」を象徴する音です。人が自然と集まり・相談が絶えない、頼られる存在です。面倒見がよく、困っている人の夢を叶えたり問題を解決したりする力があります。集団行動・チームプレーの中で力を発揮しやすく、みんなで取り組むことで評価が上がりやすい音です。分かち合い・共有という行為がこの音の魂を最も喜ばせるため、「与えること・シェアすること」を積極的に選ぶことが開運につながります。共に歩む仲間への感謝を日常的に表現することがこの音の最大の開運習慣です。</p>
+        </div>
+      </div>
+
+      <!-- 音13 -->
+      <div class="tone-card">
+        <div class="tone-card__header">
+          <img src="assets/images/tones/13.png" alt="音13" class="tone-card__img">
+          <div class="tone-card__meta">
+            <span class="tone-card__num">TONE 13</span>
+            <p class="tone-card__name">音13</p>
+            <span class="tone-card__keyword">集大成・超越・宇宙的視野</span>
+          </div>
+        </div>
+        <div class="tone-card__body">
+          <p class="tone-card__text">音13は「集大成・超越・宇宙的視野」を象徴する音で、20の音の中で最も大きなビジョンと多才さを持つ音です。全体を見渡す広い視野・マルチタスク能力・プロデューサー気質を持った、偉大な指導者タイプです。器用で多才なため「何でもできてしまう」のですが、「何か一つに絞り込む」という決断をしたとき、魂の覚醒が起きるほどの大きなエネルギーが生まれると言われています。長期スパンで結果が出る音なので、焦らず見守ることが大切です。好きなことにコツコツ取り組む誠実さと、宇宙的なビジョンを信じ続ける力が、この音の集大成のエネルギーを最高の形で咲かせます。</p>
+        </div>
+      </div>
+
+    </div><!-- /.tone-grid -->
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="result-cta" style="padding: 3rem 1rem;">
+  <p class="result-cta__lead">自分の銀河の音を調べてみましょう</p>
+  <div class="result-cta__btns">
+    <a href="/#diagnosis" class="cta-btn cta-btn--oracle">
+      無料でKIN番号を診断する →
+    </a>
+    <a href="https://lin.ee/PLACEHOLDER" class="cta-btn cta-btn--line" target="_blank" rel="noopener">
+      公式LINEで無料特典を受け取る →
+    </a>
+  </div>
+</div>
+
+<!-- 戻るリンク -->
+<div class="tone-back">
+  <a href="/">← トップページへ戻る</a>
+  &nbsp;｜&nbsp;
+  <a href="/#seals">20種の紋章一覧を見る</a>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <a href="/" class="site-footer__logo">
+      <span>✦</span> 無料マヤ暦診断
+    </a>
+    <nav class="site-footer__nav">
+      <a href="/#diagnosis">診断する</a>
+      <a href="/#seals">20の紋章</a>
+      <a href="/#faq">よくある質問</a>
+      <a href="https://kin-oracle.pages.dev/oracle.html" target="_blank" rel="noopener">KIN ORACLE</a>
+    </nav>
+    <p class="site-footer__copy">&copy; 2025 KIN ORACLE Lite. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
