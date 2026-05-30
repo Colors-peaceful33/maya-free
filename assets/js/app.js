@@ -128,7 +128,8 @@ function renderResult(year, month, day) {
   card.className = `result-seal-card result-seal-card--${color}`;
 
   // タグ情報
-  document.getElementById('result-tone').textContent = `音${tone}`;
+  const toneEl = document.getElementById('result-tone');
+  toneEl.innerHTML = `<img src="assets/images/tones/${tone}.png" alt="音${tone}" class="result-tone-img"> 音${tone}`;
   document.getElementById('result-wavespell').textContent = wavespell;
   document.getElementById('result-guide').textContent = guideName;
 
