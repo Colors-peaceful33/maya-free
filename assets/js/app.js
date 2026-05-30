@@ -143,7 +143,7 @@ function renderResult(year, month, day) {
       SEAL_NAMES[occultSeal(sealNum)] || '-';
   }
 
-  // 黒KIN
+  // 絶対反対KIN（KIN ± 130）
   const blackKin = kin > 130 ? kin - 130 : kin + 130;
   document.getElementById('result-black').textContent = `KIN${blackKin}`;
 
