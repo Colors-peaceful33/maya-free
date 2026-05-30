@@ -1719,12 +1719,13 @@ a { color: var(--gold-deep); }
 .result-trio__img {
   width: 100%;
   max-width: 180px;
-  height: auto;
+  height: 180px;      /* 固定高さで3枚を揃える */
   object-fit: contain;
-  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
 }
 .result-trio__img--tone {
-  max-width: 140px;
+  max-width: 180px;   /* 音も同サイズ領域で表示 */
+  height: 180px;
 }
 .result-trio__role {
   font-size: 0.7rem;
@@ -1790,17 +1791,19 @@ a { color: var(--gold-deep); }
   margin: 0 0.6em;
 }
 
-/* 2グリッド横並び */
+/* 2グリッド横並び — align-items:stretch で両列同高 */
 .result-oracles {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .oracle-wrap {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  height: 100%;          /* グリッドセルの高さを全て使う */
 }
 .oracle-wrap__title {
   font-size: 0.75rem;
@@ -1816,6 +1819,7 @@ a { color: var(--gold-deep); }
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  flex: 1;               /* oracle-wrap の残り高さを全て使う */
 }
 .oracle-row {
   display: flex;
@@ -1831,8 +1835,10 @@ a { color: var(--gold-deep); }
   display: flex;
   justify-content: center;
 }
+/* ウェイブスペル側のスペーサー：左のガイド行と同じ高さになるよう伸縮 */
 .oracle-row--spacer {
-  min-height: 4px;
+  flex: 1;
+  min-height: 0;
 }
 
 /* セル */
@@ -1883,8 +1889,8 @@ a { color: var(--gold-deep); }
     grid-template-columns: repeat(3, 1fr);
     gap: 0.6rem;
   }
-  .result-trio__img { max-width: 100px; }
-  .result-trio__img--tone { max-width: 80px; }
+  .result-trio__img { max-width: 100px; height: 100px; }
+  .result-trio__img--tone { max-width: 100px; height: 100px; }
   .result-trio__name { font-size: 0.8rem; }
   .result-trio__card { padding: 0.9rem 0.4rem; }
 
