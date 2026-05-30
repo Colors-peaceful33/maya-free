@@ -1664,3 +1664,241 @@ a { color: var(--gold-deep); }
   .related-grid { grid-template-columns: 1fr; }
   .author-stats { grid-template-columns: 1fr 1fr; }
 }
+
+/* ============================================================
+   結果エリア v2 — 3トリオ・オラクルグリッド
+   ============================================================ */
+
+/* KIN番号ヒーロー */
+.result-kin-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  margin: 0 auto 2rem;
+}
+.result-kin-hero__label {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.result-kin-hero__num {
+  font-family: var(--font-en);
+  font-size: clamp(3.5rem, 10vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold-deep);
+  letter-spacing: -0.02em;
+}
+
+/* ── 3枚イラスト横並び ── */
+.result-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.result-trio__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.4rem 0.8rem 1.2rem;
+  border-radius: 16px;
+  background: var(--pastel-pearl);
+  text-align: center;
+  transition: transform 0.2s;
+}
+.result-trio__card--red    { background: var(--pastel-blush); }
+.result-trio__card--white  { background: var(--pastel-pearl); }
+.result-trio__card--blue   { background: var(--pastel-sky); }
+.result-trio__card--yellow { background: var(--pastel-butter); }
+.result-trio__card--tone   { background: var(--pastel-lilac); }
+.result-trio__img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+.result-trio__img--tone {
+  max-width: 140px;
+}
+.result-trio__role {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+.result-trio__name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ── KIN情報ボックス ── */
+.result-info-box {
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  background: #fff;
+}
+.result-info-box__row {
+  display: flex;
+  align-items: baseline;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid #ece5d8;
+  gap: 1.2rem;
+}
+.result-info-box__row:last-child { border-bottom: none; }
+.result-info-box__label {
+  min-width: 120px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-deep);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.result-info-box__val {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ── オラクルグリッドセクション ── */
+.result-oracle-section {
+  margin-bottom: 2.5rem;
+}
+.result-oracle-section__ttl {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+.result-oracle-section__ttl::before,
+.result-oracle-section__ttl::after {
+  content: '—';
+  color: var(--gold);
+  margin: 0 0.6em;
+}
+
+/* 2グリッド横並び */
+.result-oracles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.oracle-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.oracle-wrap__title {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-deep);
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* グリッド行 */
+.oracle-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.oracle-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.oracle-row--triple {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4rem;
+}
+.oracle-row--single {
+  display: flex;
+  justify-content: center;
+}
+.oracle-row--spacer {
+  min-height: 4px;
+}
+
+/* セル */
+.oracle-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.7rem 0.4rem 0.6rem;
+  border-radius: 10px;
+  background: var(--pastel-pearl);
+  text-align: center;
+  min-width: 0;
+}
+.oracle-cell--red    { background: var(--pastel-blush); }
+.oracle-cell--white  { background: var(--pastel-pearl); }
+.oracle-cell--blue   { background: var(--pastel-sky); }
+.oracle-cell--yellow { background: var(--pastel-butter); }
+.oracle-cell--self {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+.oracle-cell__img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.oracle-cell__role {
+  font-size: 0.62rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  margin-top: 0.1rem;
+  white-space: nowrap;
+}
+.oracle-cell__name {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 640px) {
+  .result-trio {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+  .result-trio__img { max-width: 100px; }
+  .result-trio__img--tone { max-width: 80px; }
+  .result-trio__name { font-size: 0.8rem; }
+  .result-trio__card { padding: 0.9rem 0.4rem; }
+
+  .result-oracles { grid-template-columns: 1fr; gap: 2rem; }
+
+  .oracle-cell__img { width: 44px; height: 44px; }
+  .oracle-cell__name { font-size: 0.7rem; }
+
+  .result-info-box__label { min-width: 90px; font-size: 0.75rem; }
+  .result-info-box__val { font-size: 0.82rem; }
+}
+@media (max-width: 380px) {
+  .result-trio { gap: 0.4rem; }
+  .result-trio__img { max-width: 80px; }
+  .oracle-cell { padding: 0.5rem 0.25rem; }
+  .oracle-cell__img { width: 36px; height: 36px; }
+}

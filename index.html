@@ -119,71 +119,147 @@
     <h2 class="result-section__title">あなたのKIN鑑定結果</h2>
     <p class="result-section__date" id="result-date"></p>
 
-    <!-- メイン結果カード -->
-    <div class="result-main">
-      <!-- 紋章ビジュアル -->
-      <div class="result-seal-col">
-        <div class="result-seal-card" id="result-seal-card">
-          <img id="result-seal-img" src="" alt="" class="result-seal-img">
-          <div class="result-seal-meta">
-            <p class="result-seal-meta__label">太陽の紋章</p>
-            <p class="result-seal-meta__name" id="result-seal-name"></p>
-          </div>
-        </div>
-        <div class="result-kin-badge">
-          <span class="result-kin-badge__label">KIN</span>
-          <span class="result-kin-badge__num" id="result-kin-num"></span>
-        </div>
-      </div>
+    <!-- KIN番号バッジ -->
+    <div class="result-kin-hero">
+      <span class="result-kin-hero__label">KIN</span>
+      <span class="result-kin-hero__num" id="result-kin-num"></span>
+    </div>
 
-      <!-- サブ情報 -->
-      <div class="result-info-col">
-        <div class="result-tags">
-          <div class="result-tag">
-            <span class="result-tag__label">銀河の音</span>
-            <span class="result-tag__val" id="result-tone"></span>
-          </div>
-          <div class="result-tag">
-            <span class="result-tag__label">ウェイブスペル</span>
-            <span class="result-tag__val" id="result-wavespell"></span>
-          </div>
-          <div class="result-tag">
-            <span class="result-tag__label">ガイド</span>
-            <span class="result-tag__val" id="result-guide"></span>
-          </div>
-        </div>
-
-        <!-- 5つの城 -->
-        <div id="result-castle" class="result-castle"></div>
-
-        <!-- 関係紋章 -->
-        <div class="result-relations">
-          <p class="result-relations__title">あなたとつながる紋章</p>
-          <div class="result-relations__grid">
-            <div class="result-relation-item">
-              <span class="result-relation-item__role">反対キン</span>
-              <span class="result-relation-item__name" id="result-antipode"></span>
-            </div>
-            <div class="result-relation-item">
-              <span class="result-relation-item__role">類似キン</span>
-              <span class="result-relation-item__name" id="result-analog"></span>
-            </div>
-            <div class="result-relation-item">
-              <span class="result-relation-item__role">神秘キン</span>
-              <span class="result-relation-item__name" id="result-occult"></span>
-            </div>
-            <div class="result-relation-item">
-              <span class="result-relation-item__role">絶対反対KIN</span>
-              <span class="result-relation-item__name" id="result-black"></span>
-            </div>
-          </div>
+    <!-- ① 3枚イラスト横並び -->
+    <div class="result-trio">
+      <div class="result-trio__item">
+        <div class="result-trio__card" id="result-seal-card">
+          <img id="result-seal-img" src="" alt="" class="result-trio__img">
+          <p class="result-trio__role">太陽の紋章</p>
+          <p class="result-trio__name" id="result-seal-name"></p>
         </div>
       </div>
-    </div><!-- /.result-main -->
+      <div class="result-trio__item">
+        <div class="result-trio__card" id="result-wave-card">
+          <img id="result-wave-img" src="" alt="" class="result-trio__img">
+          <p class="result-trio__role">ウェイブスペル</p>
+          <p class="result-trio__name" id="result-wavespell"></p>
+        </div>
+      </div>
+      <div class="result-trio__item">
+        <div class="result-trio__card result-trio__card--tone" id="result-tone-card">
+          <img id="result-tone-img" src="" alt="" class="result-trio__img result-trio__img--tone">
+          <p class="result-trio__role">銀河の音</p>
+          <p class="result-trio__name" id="result-tone"></p>
+        </div>
+      </div>
+    </div>
 
-    <!-- 解説カード群 -->
+    <!-- ② KIN情報ボックス -->
+    <div class="result-info-box">
+      <div class="result-info-box__row">
+        <span class="result-info-box__label">ガイド</span>
+        <span class="result-info-box__val" id="result-guide"></span>
+      </div>
+      <div class="result-info-box__row">
+        <span class="result-info-box__label">音の関係</span>
+        <span class="result-info-box__val" id="result-tone-relation"></span>
+      </div>
+      <div class="result-info-box__row">
+        <span class="result-info-box__label">魂の親戚</span>
+        <span class="result-info-box__val" id="result-soul-kin"></span>
+      </div>
+      <div class="result-info-box__row">
+        <span class="result-info-box__label">絶対反対KIN</span>
+        <span class="result-info-box__val" id="result-black"></span>
+      </div>
+      <div class="result-info-box__row">
+        <span class="result-info-box__label">鏡向KINグループ</span>
+        <span class="result-info-box__val" id="result-mirror-group"></span>
+      </div>
+    </div>
+
+    <!-- ③ オラクルグリッド（関係紋章） -->
+    <div class="result-oracle-section">
+      <h3 class="result-oracle-section__ttl">あなたとつながる紋章</h3>
+      <div class="result-oracles">
+
+        <!-- 太陽の紋章グリッド -->
+        <div class="oracle-wrap">
+          <p class="oracle-wrap__title">太陽の紋章</p>
+          <div class="oracle-grid">
+            <!-- ガイド（上段中央） -->
+            <div class="oracle-row oracle-row--single">
+              <div class="oracle-cell" id="oracle-guide">
+                <img class="oracle-cell__img" id="oracle-guide-img" src="" alt="">
+                <small class="oracle-cell__role">ガイド</small>
+                <span class="oracle-cell__name" id="oracle-guide-name"></span>
+              </div>
+            </div>
+            <!-- 反対 / 紋章 / 類似（中段） -->
+            <div class="oracle-row oracle-row--triple">
+              <div class="oracle-cell" id="oracle-antipode">
+                <img class="oracle-cell__img" id="oracle-antipode-img" src="" alt="">
+                <small class="oracle-cell__role">反対キン</small>
+                <span class="oracle-cell__name" id="result-antipode"></span>
+              </div>
+              <div class="oracle-cell oracle-cell--self" id="oracle-self">
+                <img class="oracle-cell__img" id="oracle-self-img" src="" alt="">
+                <small class="oracle-cell__role">太陽の紋章</small>
+                <span class="oracle-cell__name" id="oracle-self-name"></span>
+              </div>
+              <div class="oracle-cell" id="oracle-analog">
+                <img class="oracle-cell__img" id="oracle-analog-img" src="" alt="">
+                <small class="oracle-cell__role">類似キン</small>
+                <span class="oracle-cell__name" id="result-analog"></span>
+              </div>
+            </div>
+            <!-- 神秘（下段中央） -->
+            <div class="oracle-row oracle-row--single">
+              <div class="oracle-cell" id="oracle-occult">
+                <img class="oracle-cell__img" id="oracle-occult-img" src="" alt="">
+                <small class="oracle-cell__role">神秘キン</small>
+                <span class="oracle-cell__name" id="result-occult"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ウェイブスペルグリッド -->
+        <div class="oracle-wrap">
+          <p class="oracle-wrap__title">ウェイブスペル</p>
+          <div class="oracle-grid">
+            <!-- スペーサー（ガイドなし） -->
+            <div class="oracle-row oracle-row--spacer"></div>
+            <!-- 反対 / WS / 類似（中段） -->
+            <div class="oracle-row oracle-row--triple">
+              <div class="oracle-cell" id="ws-oracle-antipode">
+                <img class="oracle-cell__img" id="ws-antipode-img" src="" alt="">
+                <small class="oracle-cell__role">反対キン</small>
+                <span class="oracle-cell__name" id="ws-antipode-name"></span>
+              </div>
+              <div class="oracle-cell oracle-cell--self" id="ws-oracle-self">
+                <img class="oracle-cell__img" id="ws-self-img" src="" alt="">
+                <small class="oracle-cell__role">ウェイブスペル</small>
+                <span class="oracle-cell__name" id="ws-self-name"></span>
+              </div>
+              <div class="oracle-cell" id="ws-oracle-analog">
+                <img class="oracle-cell__img" id="ws-analog-img" src="" alt="">
+                <small class="oracle-cell__role">類似キン</small>
+                <span class="oracle-cell__name" id="ws-analog-name"></span>
+              </div>
+            </div>
+            <!-- 神秘（下段中央） -->
+            <div class="oracle-row oracle-row--single">
+              <div class="oracle-cell" id="ws-oracle-occult">
+                <img class="oracle-cell__img" id="ws-occult-img" src="" alt="">
+                <small class="oracle-cell__role">神秘キン</small>
+                <span class="oracle-cell__name" id="ws-occult-name"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ④ 解説カード群 -->
     <div class="reading-cards">
-      <!-- 太陽の紋章解説 -->
       <div class="reading-card">
         <div class="reading-card__head">
           <span class="reading-card__icon">☽</span>
@@ -197,8 +273,6 @@
           <div class="reading-card__full" id="seal-reading-full" hidden></div>
         </div>
       </div>
-
-      <!-- ウェイブスペル解説 -->
       <div class="reading-card">
         <div class="reading-card__head">
           <span class="reading-card__icon">◇</span>
@@ -212,8 +286,6 @@
           <div class="reading-card__full" id="wave-reading-full" hidden></div>
         </div>
       </div>
-
-      <!-- 銀河の音解説 -->
       <div class="reading-card">
         <div class="reading-card__head">
           <span class="reading-card__icon">✦</span>
@@ -229,7 +301,7 @@
       </div>
     </div><!-- /.reading-cards -->
 
-    <!-- 結果CTA -->
+    <!-- ⑤ 結果CTA -->
     <div class="result-cta">
       <p class="result-cta__lead">もっと詳しく知りたい方はこちら</p>
       <div class="result-cta__btns">

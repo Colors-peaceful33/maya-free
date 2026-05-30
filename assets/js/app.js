@@ -33,32 +33,64 @@ const SEAL_COLOR_CLASS = {
 
 function getSealColor(sealName) {
   const first = sealName[0];
-  return SEAL_COLOR_CLASS[first] || 'red';
+  return SEAL_COLOR_CLASS[first] || 'white';
 }
 
-// 紋章番号 → 関係紋章算出
+// ── 紋章番号 → 関係紋章算出 ────────────────────────────
 function antipodeSeal(n) {
-  // 反対 = (n + 10 - 1) % 20 + 1  but wrapped to 1-20
-  const r = ((n - 1 + 10) % 20) + 1;
-  return r;
+  return ((n - 1 + 10) % 20) + 1;
 }
 function analogSeal(n) {
-  // 類似 = (38 - n) % 20, with wraparound to 1-20
-  let r = (38 - n) % 20;
-  if (r <= 0) r += 20;
-  return r;
+  // 隣り合う色ペア: 赤⇔白(奇数+1/偶数-1)、青⇔黄(奇数+1/偶数-1)
+  return n % 2 === 0 ? n - 1 : n + 1;
 }
 function occultSeal(n) {
-  // 神秘 = 21 - n
   return 21 - n;
 }
 
-// 紋章番号を返す（TZOLKIN の s フィールドから逆引き）
+// 紋章名 → 紋章番号
 function sealNameToNum(name) {
   for (const [k, v] of Object.entries(SEAL_NAMES)) {
     if (v === name) return parseInt(k);
   }
   return null;
+}
+
+// ── 音の関係 ────────────────────────────────────────────
+function toneDouble(t) {
+  // 倍音: 5つ前の音（循環）
+  return t > 5 ? t - 5 : t + 8;
+}
+function toneComplement(t) {
+  // 補完: 合わせて14になる音
+  return 14 - t;
+}
+function toneHarmony(t) {
+  // 協和: 4の倍数離れた同グループの音
+  const result = [];
+  for (let i = 1; i <= 13; i++) {
+    if (i !== t && (i - t) % 4 === 0) result.push(i);
+  }
+  return result;
+}
+
+// ── 魂の親戚（4KINハーモニックグループ） ────────────────
+function soulRelatives(kin) {
+  const start = Math.floor((kin - 1) / 4) * 4 + 1;
+  const result = [];
+  for (let i = start; i < start + 4; i++) {
+    if (i !== kin) result.push(i);
+  }
+  return result;
+}
+
+// ── 鏡向KINグループ（261-KINのハーモニック） ──────────
+function mirrorKinGroup(kin) {
+  const mirror = 261 - kin;
+  const start  = Math.floor((mirror - 1) / 4) * 4 + 1;
+  const result = [];
+  for (let i = start; i < start + 4; i++) result.push(i);
+  return result;
 }
 
 // ── セレクト初期化 ────────────────────────────────────────
@@ -89,6 +121,51 @@ function truncate(str, len) {
   return str.length > len ? str.slice(0, len) + '……' : str;
 }
 
+// ── オラクルセル描画 ─────────────────────────────────────
+// cellId: セル div の ID
+// imgId: 画像 img の ID
+// nameId: 名前 span の ID
+// sealName: 紋章名
+// isSelf: 自分の紋章かどうか（金枠）
+function setOracleCell(cellId, imgId, nameId, sealName, isSelf = false) {
+  const cell  = document.getElementById(cellId);
+  const img   = document.getElementById(imgId);
+  const nameEl = document.getElementById(nameId);
+  if (!cell || !img || !sealName) return;
+
+  img.src = `assets/images/seals/${sealName}.png`;
+  img.alt = sealName;
+  if (nameEl) nameEl.textContent = sealName;
+
+  const colorClass = getSealColor(sealName);
+  cell.className = `oracle-cell oracle-cell--${colorClass}${isSelf ? ' oracle-cell--self' : ''}`;
+}
+
+// ── 解説テキスト設定 ─────────────────────────────────────
+function setReading(prefix, fullText, previewLen, moreHref) {
+  const preview = document.getElementById(`${prefix}-preview`);
+  const full    = document.getElementById(`${prefix}-full`);
+  if (!preview || !full) return;
+
+  preview.textContent = truncate(fullText, previewLen);
+
+  full.innerHTML = '';
+  const paras = fullText.split(/\n\n+|(?<=。)\s*(?=[^\s])/g).filter(p => p.trim());
+  paras.forEach(p => {
+    const el = document.createElement('p');
+    el.textContent = p.trim();
+    full.appendChild(el);
+  });
+
+  if (moreHref) {
+    const link = document.createElement('a');
+    link.href = moreHref;
+    link.className = 'reading-more-link';
+    link.textContent = '「太陽の紋章」の詳細ページを見る →';
+    full.appendChild(link);
+  }
+}
+
 // ── 結果描画 ─────────────────────────────────────────────
 function renderResult(year, month, day) {
   let kin;
@@ -102,134 +179,114 @@ function renderResult(year, month, day) {
   const data = getKinData(kin);
   if (!data) { alert('KINデータを取得できませんでした。'); return; }
 
-  const sealName = data.solar_seal;
-  const tone = data.tone;
+  const sealName  = data.solar_seal;
+  const tone      = data.tone;
   const wavespell = data.wavespell;
   const guideName = data.guide;
+  const sealNum   = sealNameToNum(sealName);
+  const color     = getSealColor(sealName);
 
-  // 紋章番号
-  const sealNum = sealNameToNum(sealName);
-  const color = getSealColor(sealName);
-
-  // KIN バッジ
+  // ── KIN番号・日付 ──
   document.getElementById('result-kin-num').textContent = kin;
-  document.getElementById('result-date').textContent =
-    `${year}年${month}月${day}日生まれ`;
+  document.getElementById('result-date').textContent = `${year}年${month}月${day}日生まれ`;
 
-  // 紋章画像・名前
-  const img = document.getElementById('result-seal-img');
-  img.src = `assets/images/seals/${sealName}.png`;
-  img.alt = sealName;
-
+  // ── ① 太陽の紋章トリオカード ──
+  const sealImg = document.getElementById('result-seal-img');
+  sealImg.src = `assets/images/seals/${sealName}.png`;
+  sealImg.alt = sealName;
   document.getElementById('result-seal-name').textContent = sealName;
+  const sealCard = document.getElementById('result-seal-card');
+  sealCard.className = `result-trio__card result-trio__card--${color}`;
 
-  // カードカラー
-  const card = document.getElementById('result-seal-card');
-  card.className = `result-seal-card result-seal-card--${color}`;
-
-  // タグ情報
-  const toneEl = document.getElementById('result-tone');
-  toneEl.innerHTML = `<img src="assets/images/tones/${tone}.png" alt="音${tone}" class="result-tone-img"> 音${tone}`;
+  // ── ① ウェイブスペルトリオカード ──
+  const waveImg = document.getElementById('result-wave-img');
+  waveImg.src = `assets/images/seals/${wavespell}.png`;
+  waveImg.alt = wavespell;
   document.getElementById('result-wavespell').textContent = wavespell;
+  const waveColor = getSealColor(wavespell);
+  document.getElementById('result-wave-card').className =
+    `result-trio__card result-trio__card--${waveColor}`;
+
+  // ── ① 銀河の音トリオカード ──
+  const toneImg = document.getElementById('result-tone-img');
+  toneImg.src = `assets/images/tones/${tone}.png`;
+  toneImg.alt = `音${tone}`;
+  document.getElementById('result-tone').textContent = `音${tone}`;
+
+  // ── ② 情報ボックス ──
   document.getElementById('result-guide').textContent = guideName;
 
-  // 関係紋章（紋章名で表示）
-  if (sealNum) {
-    document.getElementById('result-antipode').textContent =
-      SEAL_NAMES[antipodeSeal(sealNum)] || '-';
-    document.getElementById('result-analog').textContent =
-      SEAL_NAMES[analogSeal(sealNum)] || '-';
-    document.getElementById('result-occult').textContent =
-      SEAL_NAMES[occultSeal(sealNum)] || '-';
-  }
-
-  // 絶対反対KIN（KIN ± 130）
+  // 絶対反対KIN
   const blackKin = kin > 130 ? kin - 130 : kin + 130;
   document.getElementById('result-black').textContent = `KIN${blackKin}`;
 
-  // 解説テキスト
-  const sealReading = SEAL_READINGS[sealName] || '';
-  const waveReading = WAVESPELL_READINGS[wavespell] || '';
-  const toneReading = TONE_READINGS[tone] || '';
+  // 音の関係
+  const dbl  = toneDouble(tone);
+  const comp = toneComplement(tone);
+  const harm = toneHarmony(tone);
+  document.getElementById('result-tone-relation').textContent =
+    `倍音${dbl}／補完${comp}／協和${harm.join('・')}`;
 
+  // 魂の親戚
+  const souls = soulRelatives(kin);
+  document.getElementById('result-soul-kin').textContent =
+    souls.map(k => `KIN${k}`).join('・');
+
+  // 鏡向KINグループ
+  const mirrors = mirrorKinGroup(kin);
+  document.getElementById('result-mirror-group').textContent =
+    mirrors.map(k => `KIN${k}`).join('・');
+
+  // ── ③ オラクルグリッド ──
+  if (sealNum) {
+    const antipodeName = SEAL_NAMES[antipodeSeal(sealNum)] || '';
+    const analogName   = SEAL_NAMES[analogSeal(sealNum)]   || '';
+    const occultName   = SEAL_NAMES[occultSeal(sealNum)]   || '';
+
+    // 太陽の紋章グリッド
+    setOracleCell('oracle-guide',    'oracle-guide-img',    'oracle-guide-name', guideName);
+    setOracleCell('oracle-self',     'oracle-self-img',     'oracle-self-name',  sealName, true);
+    setOracleCell('oracle-antipode', 'oracle-antipode-img', 'result-antipode',   antipodeName);
+    setOracleCell('oracle-analog',   'oracle-analog-img',   'result-analog',     analogName);
+    setOracleCell('oracle-occult',   'oracle-occult-img',   'result-occult',     occultName);
+
+    // ウェイブスペルグリッド
+    const wsNum = sealNameToNum(wavespell);
+    if (wsNum) {
+      const wsAntipodeName = SEAL_NAMES[antipodeSeal(wsNum)] || '';
+      const wsAnalogName   = SEAL_NAMES[analogSeal(wsNum)]   || '';
+      const wsOccultName   = SEAL_NAMES[occultSeal(wsNum)]   || '';
+
+      setOracleCell('ws-oracle-self',     'ws-self-img',     'ws-self-name',     wavespell, true);
+      setOracleCell('ws-oracle-antipode', 'ws-antipode-img', 'ws-antipode-name', wsAntipodeName);
+      setOracleCell('ws-oracle-analog',   'ws-analog-img',   'ws-analog-name',   wsAnalogName);
+      setOracleCell('ws-oracle-occult',   'ws-occult-img',   'ws-occult-name',   wsOccultName);
+    }
+  }
+
+  // ── ④ 解説テキスト ──
   const PREVIEW_LEN = 180;
-  setReading('seal-reading', sealReading, PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`);
-  setReading('wave-reading', waveReading, PREVIEW_LEN, null);
-  setReading('tone-reading', toneReading, PREVIEW_LEN, null);
+  setReading('seal-reading', SEAL_READINGS[sealName]  || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`);
+  setReading('wave-reading', WAVESPELL_READINGS[wavespell] || '', PREVIEW_LEN, null);
+  setReading('tone-reading', TONE_READINGS[tone]      || '', PREVIEW_LEN, null);
 
-  // 5つの城
-  setCastle(kin);
-
-  // 表示切替
+  // ── 表示切替 ──
   document.getElementById('result-area').hidden = false;
   document.getElementById('result-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
   document.getElementById('diagnosis').style.display = 'none';
-}
-
-function setReading(prefix, fullText, previewLen, moreHref) {
-  const preview = document.getElementById(`${prefix}-preview`);
-  const full = document.getElementById(`${prefix}-full`);
-  if (!preview || !full) return;
-
-  preview.textContent = truncate(fullText, previewLen);
-
-  full.innerHTML = '';
-  // パラグラフ分割（2文字以上の改行や句点区切りは段落に）
-  const paras = fullText.split(/\n\n+|(?<=。)\s*(?=[^\s])/g).filter(p => p.trim());
-  paras.forEach(p => {
-    const el = document.createElement('p');
-    el.textContent = p.trim();
-    full.appendChild(el);
-  });
-
-  if (moreHref) {
-    const link = document.createElement('a');
-    link.href = moreHref;
-    link.className = 'reading-more-link';
-    link.textContent = `「${prefix.includes('seal') ? '太陽の紋章' : ''}」の詳細ページを見る →`;
-    full.appendChild(link);
-  }
-}
-
-// ── 5つの城 ────────────────────────────────────────────────
-const CASTLES = [
-  { name: '赤い東の城', range: '1〜52',   theme: '誕生と出発', color: 'red' },
-  { name: '白い北の城', range: '53〜104', theme: '精錬と浄化', color: 'white' },
-  { name: '青い西の城', range: '105〜156',theme: '変容と魔法', color: 'blue' },
-  { name: '黄色い南の城',range: '157〜208',theme: '成熟と開花', color: 'yellow' },
-  { name: '緑の中心の城',range: '209〜260',theme: '統合と悟り', color: 'green' },
-];
-
-function getCastle(kin) {
-  if (kin <= 52)  return CASTLES[0];
-  if (kin <= 104) return CASTLES[1];
-  if (kin <= 156) return CASTLES[2];
-  if (kin <= 208) return CASTLES[3];
-  return CASTLES[4];
-}
-
-function setCastle(kin) {
-  const el = document.getElementById('result-castle');
-  if (!el) return;
-  const c = getCastle(kin);
-  el.innerHTML = `
-    <span class="result-castle__name">${c.name}</span>
-    <span class="result-castle__theme">${c.theme}</span>
-    <span class="result-castle__range">KIN ${c.range}</span>`;
-  el.className = `result-castle result-castle--${c.color}`;
 }
 
 // ── アコーディオン制御 ────────────────────────────────────
 function initAccordion() {
   document.querySelectorAll('.reading-card__toggle').forEach(btn => {
     btn.addEventListener('click', () => {
-      const card = btn.closest('.reading-card');
-      const body = card.querySelector('.reading-card__full');
-      const icon = btn.querySelector('.reading-card__toggle-icon');
+      const card   = btn.closest('.reading-card');
+      const body   = card.querySelector('.reading-card__full');
+      const icon   = btn.querySelector('.reading-card__toggle-icon');
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
       btn.setAttribute('aria-expanded', !isOpen);
-      body.hidden = isOpen;
+      body.hidden  = isOpen;
       icon.textContent = isOpen ? '+' : '−';
     });
   });
@@ -239,11 +296,10 @@ function initAccordion() {
 function initFaqAccordion() {
   document.querySelectorAll('.faq-item__q').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
+      const item   = btn.closest('.faq-item');
       const answer = item.querySelector('.faq-item__a');
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-      // 他のFAQを閉じる
       document.querySelectorAll('.faq-item').forEach(it => {
         if (it !== item) {
           it.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
@@ -291,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('diagnosis').style.display = '';
       document.getElementById('diagnosis').scrollIntoView({ behavior: 'smooth' });
       form.reset();
-      initYearSelect(); // リセット後に再生成が必要な場合
+      initYearSelect();
     });
   }
 });
