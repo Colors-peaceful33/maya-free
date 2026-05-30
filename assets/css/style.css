@@ -1664,6 +1664,35 @@ a { color: var(--gold-deep); }
   .author-stats { grid-template-columns: 1fr 1fr; }
 }
 
+/* ── KIN ORACLE バナー ── */
+.oracle-banner-section {
+  padding: 3rem 0 2.5rem;
+  background: var(--bg-soft);
+}
+.oracle-banner-link {
+  display: block;
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.oracle-banner-link:hover {
+  opacity: 0.94;
+  transform: translateY(-2px);
+}
+.oracle-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.oracle-banner-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+
 /* ============================================================
    結果エリア v2 — 3トリオ・オラクルグリッド
    ============================================================ */
