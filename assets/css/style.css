@@ -845,9 +845,9 @@ a { color: var(--gold-deep); }
   letter-spacing: 0.12em;
 }
 .relation-block p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--ink-soft);
-  line-height: 2.05;
+  line-height: 1.95;
 }
 
 /* ──────────────────────────────────────────────
