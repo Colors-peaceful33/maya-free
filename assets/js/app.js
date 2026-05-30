@@ -142,7 +142,7 @@ function setOracleCell(cellId, imgId, nameId, sealName, isSelf = false) {
 }
 
 // ── 解説テキスト設定 ─────────────────────────────────────
-function setReading(prefix, fullText, previewLen, moreHref) {
+function setReading(prefix, fullText, previewLen, moreHref, linkLabel) {
   const preview = document.getElementById(`${prefix}-preview`);
   const full    = document.getElementById(`${prefix}-full`);
   if (!preview || !full) return;
@@ -161,7 +161,7 @@ function setReading(prefix, fullText, previewLen, moreHref) {
     const link = document.createElement('a');
     link.href = moreHref;
     link.className = 'reading-more-link';
-    link.textContent = '「太陽の紋章」の詳細ページを見る →';
+    link.textContent = linkLabel || '詳細ページを見る →';
     full.appendChild(link);
   }
 }
@@ -266,8 +266,8 @@ function renderResult(year, month, day) {
 
   // ── ④ 解説テキスト ──
   const PREVIEW_LEN = 180;
-  setReading('seal-reading', SEAL_READINGS[sealName]  || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`);
-  setReading('wave-reading', WAVESPELL_READINGS[wavespell] || '', PREVIEW_LEN, null);
+  setReading('seal-reading', SEAL_READINGS[sealName]  || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`,  `「${sealName}」の詳細ページを見る →`);
+  setReading('wave-reading', WAVESPELL_READINGS[wavespell] || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[wavespell]}.html`, `「${wavespell}」の詳細ページを見る →`);
   setReading('tone-reading', TONE_READINGS[tone]      || '', PREVIEW_LEN, null);
 
   // ── 表示切替 ──
