@@ -136,7 +136,7 @@ def generate_page(seal, seal_reading):
         <span class="seal-page-eyebrow">Solar Seal {n:02d}</span>
         <h1 class="seal-page-title">{name}</h1>
         <p class="seal-page-key">{key}</p>
-        <p class="seal-page-desc">マヤ暦20の紋章の{n}番目。{name}はあなたの本質・才能・大切なテーマを表す紋章です。生まれながらに持っているエネルギーを、やさしく教えてくれます。</p>
+        <p class="seal-page-desc">マヤ暦20の紋章の{n}番目。{name}はその人の本質・才能・テーマとして顕れるエネルギーを象徴します。</p>
         <div class="seal-page-kin-list">
           {kin_chips}
         </div>
@@ -152,7 +152,7 @@ def generate_page(seal, seal_reading):
 <section class="seal-detail-wrap">
   <div class="container">
     <div class="seal-detail-section">
-      <h2>「{name}」ってどんな人？</h2>
+      <h2>「{name}」の性格・才能</h2>
       {reading_html}
     </div>
 
@@ -177,10 +177,10 @@ def generate_page(seal, seal_reading):
 
     <!-- CTA -->
     <div class="result-cta" style="margin: 3rem 0;">
-      <p class="result-cta__lead">自分の紋章をまだ調べていない方は、ぜひここからどうぞ</p>
+      <p class="result-cta__lead">あなたの紋章を調べてみましょう</p>
       <div class="result-cta__btns">
         <a href="/#diagnosis" class="cta-btn cta-btn--oracle">
-          無料でKIN番号を調べる →
+          無料でKIN番号を診断する →
         </a>
         <a href="https://lin.ee/PLACEHOLDER" class="cta-btn cta-btn--line" target="_blank" rel="noopener">
           公式LINEで無料特典を受け取る →
