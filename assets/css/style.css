@@ -877,52 +877,80 @@ a { color: var(--gold-deep); }
   margin: 0 auto;
 }
 .kin-rel-card {
-  border-radius: 16px;
+  position: relative;
+  border-radius: 18px;
   overflow: hidden;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  background: #fffdfb;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 26px rgba(60,40,30,0.08);
   transition: transform 0.25s, box-shadow 0.25s;
 }
 .kin-rel-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  box-shadow: 0 12px 34px rgba(60,40,30,0.13);
 }
-.kin-rel-card--red    { background-image: url('../images/card-red.png'); }
-.kin-rel-card--blue   { background-image: url('../images/card-blue.png'); }
-.kin-rel-card--purple { background-image: url('../images/card-purple.png'); }
-.kin-rel-card--gold   { background-image: url('../images/card-gold.png'); }
+/* 上部カラーバー */
+.kin-rel-card__bar {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 2;
+}
+.kin-rel-card--red    .kin-rel-card__bar { background: linear-gradient(90deg, #e79b92, #d98072); }
+.kin-rel-card--blue   .kin-rel-card__bar { background: linear-gradient(90deg, #8ab4e4, #6a96d4); }
+.kin-rel-card--purple .kin-rel-card__bar { background: linear-gradient(90deg, #c3b2e0, #a98fce); }
+.kin-rel-card--gold   .kin-rel-card__bar { background: linear-gradient(90deg, #e0c88b, #cda85e); }
+/* 背景の淡いカラーティント */
+.kin-rel-card--red    { background: linear-gradient(160deg, #fdf4f3 0%, #fffdfb 55%); }
+.kin-rel-card--blue   { background: linear-gradient(160deg, #f3f7fd 0%, #fffdfb 55%); }
+.kin-rel-card--purple { background: linear-gradient(160deg, #f8f5fd 0%, #fffdfb 55%); }
+.kin-rel-card--gold   { background: linear-gradient(160deg, #fdf9ef 0%, #fffdfb 55%); }
 
 .kin-rel-card__inner {
-  padding: 1.3rem 1.8rem 1.8rem 1.5rem;
+  position: relative;
+  z-index: 1;
+  padding: 1.9rem 1.9rem 1.9rem;
 }
 .kin-rel-card__head {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 1rem;
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
 }
-.kin-rel-card__icon-space {
-  width: 58px;
-  height: 58px;
+.kin-rel-card__icon {
+  width: 62px;
+  height: 62px;
   flex-shrink: 0;
+  object-fit: contain;
+}
+.kin-rel-card__head-text {
+  flex: 1;
+  min-width: 0;
 }
 .kin-rel-card__title {
   font-family: var(--font-serif);
-  font-size: 1.22rem;
+  font-size: 1.28rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   line-height: 1.2;
+  margin-bottom: 0.55rem;
 }
-.kin-rel-card--red    .kin-rel-card__title { color: #c04040; }
-.kin-rel-card--blue   .kin-rel-card__title { color: #2d6fa5; }
-.kin-rel-card--purple .kin-rel-card__title { color: #7b52a0; }
-.kin-rel-card--gold   .kin-rel-card__title { color: #a07830; }
+.kin-rel-card__line {
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(184,150,90,0.15));
+}
+.kin-rel-card--red    .kin-rel-card__title { color: #c0504a; }
+.kin-rel-card--blue   .kin-rel-card__title { color: #3a72ab; }
+.kin-rel-card--purple .kin-rel-card__title { color: #7d5aa6; }
+.kin-rel-card--gold   .kin-rel-card__title { color: #a8842f; }
 
 .kin-rel-card__text {
-  font-size: 0.875rem;
-  line-height: 1.92;
-  color: #4a4040;
+  font-size: 0.9rem;
+  line-height: 2;
+  color: var(--ink-soft);
 }
 
 /* ──────────────────────────────────────────────
