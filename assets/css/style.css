@@ -673,33 +673,33 @@ a { color: var(--gold-deep); }
   align-items: center;
   background: #fff;
   border: 1px solid var(--line-soft);
-  border-radius: 14px;
-  padding: 0.7rem 0.8rem 0.6rem;
+  border-radius: 16px;
+  padding: 1rem 1rem 0.8rem;
   font-family: var(--font-serif);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--gold-deep);
-  min-width: 76px;
+  min-width: 100px;
   text-align: center;
   transition: transform .2s, box-shadow .2s;
   box-shadow: var(--shadow-sm);
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 .tone-chip:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .tone-chip__img {
-  width: 52px;
-  height: 52px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   display: block;
 }
 .tone-chip__label {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--gold-deep);
   font-family: var(--font-serif);
 }
 .tone-chip small {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.60rem;
+  font-size: 0.65rem;
   color: var(--ink-muted);
   letter-spacing: 0.06em;
 }
