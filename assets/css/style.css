@@ -47,6 +47,8 @@
   --font-serif: 'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
   --font-sans:  'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
   --font-en:    'Cormorant Garamond', Georgia, serif;
+  /* KIN番号など数字表示専用：読みやすいサンセリフ */
+  --font-num:   'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
 
   --container:  1080px;
   --container-narrow: 820px;
@@ -391,14 +393,14 @@ a { color: var(--gold-deep); }
   box-shadow: var(--shadow-sm);
 }
 .result-kin-badge__label {
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   color: var(--gold);
   text-transform: uppercase;
 }
 .result-kin-badge__num {
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 2.8rem;
   font-weight: 300;
   color: var(--gold-deep);
@@ -758,9 +760,9 @@ a { color: var(--gold-deep); }
 }
 .seal-card__num {
   display: block;
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 0.7rem;
-  font-style: italic;
+  font-style: normal;
   color: var(--gold);
   letter-spacing: 0.18em;
   margin-bottom: 0.25rem;
@@ -1152,7 +1154,7 @@ a { color: var(--gold-deep); }
   background: rgba(255,255,255,0.7);
   border: 1px solid var(--gold-pale);
   color: var(--gold-deep);
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 0.78rem;
   padding: 0.3em 0.85em;
   border-radius: var(--radius-full);
@@ -1303,7 +1305,7 @@ a { color: var(--gold-deep); }
 }
 .castle-block__kin {
   display: block;
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 0.7rem;
   color: var(--gold);
   letter-spacing: 0.1em;
@@ -1345,7 +1347,7 @@ a { color: var(--gold-deep); }
 .result-castle__theme::before { content: '—'; margin-right: 0.4em; color: var(--gold); }
 .result-castle__range  {
   margin-left: auto;
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 0.75rem;
   color: var(--gold);
   letter-spacing: 0.1em;
@@ -1519,7 +1521,7 @@ a { color: var(--gold-deep); }
 }
 .author-stat__num {
   display: block;
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 1.8rem;
   font-weight: 300;
   color: var(--gold-deep);
@@ -1678,16 +1680,16 @@ a { color: var(--gold-deep); }
   margin: 0 auto 2rem;
 }
 .result-kin-hero__label {
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   color: var(--gold);
   text-transform: uppercase;
 }
 .result-kin-hero__num {
-  font-family: var(--font-en);
+  font-family: var(--font-num);
   font-size: clamp(3.5rem, 10vw, 5rem);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
   color: var(--gold-deep);
   letter-spacing: -0.02em;
@@ -1765,7 +1767,7 @@ a { color: var(--gold-deep); }
   flex-shrink: 0;
 }
 .result-info-box__val {
-  font-family: var(--font-serif);
+  font-family: var(--font-num);
   font-size: 0.9rem;
   color: var(--ink);
   line-height: 1.6;
