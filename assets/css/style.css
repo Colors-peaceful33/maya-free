@@ -1964,8 +1964,12 @@ a { color: var(--gold-deep); }
   gap: 0.4rem;
 }
 .oracle-row--single {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4rem;
+}
+.oracle-row--single > .oracle-cell {
+  grid-column: 2;
 }
 /* ウェイブスペル側のスペーサー：左のガイド行と同じ高さになるよう伸縮 */
 .oracle-row--spacer {
