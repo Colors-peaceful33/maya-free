@@ -1997,6 +1997,29 @@ a { color: var(--gold-deep); }
   outline: 2px solid var(--gold);
   outline-offset: -2px;
 }
+/* 紋章個別ページのT字グリッド */
+.seal-oracle-cross {
+  max-width: 380px;
+  margin: 0 auto;
+}
+.seal-oracle-cross .oracle-row--triple {
+  gap: 0.6rem;
+}
+.seal-oracle-cross .oracle-cell__img {
+  width: 64px;
+  height: 64px;
+}
+/* リンクとして機能するoracleセル */
+a.oracle-cell--nav {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+a.oracle-cell--nav:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(60,40,20,0.14);
+}
 .oracle-cell__img {
   width: 56px;
   height: 56px;
