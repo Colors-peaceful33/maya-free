@@ -41,8 +41,12 @@ function antipodeSeal(n) {
   return ((n - 1 + 10) % 20) + 1;
 }
 function analogSeal(n) {
-  // 隣り合う色ペア: 赤⇔白(奇数+1/偶数-1)、青⇔黄(奇数+1/偶数-1)
-  return n % 2 === 0 ? n - 1 : n + 1;
+  // 相補色ペア(赤↔白, 青↔黄)の逆城ポジション
+  const color = (n - 1) % 4;                          // 0=赤,1=白,2=青,3=黄
+  const pos   = Math.floor((n - 1) / 4);              // 城の位置 0–4
+  const pc    = color % 2 === 0 ? color + 1 : color - 1; // 相補色
+  const ppos  = 4 - pos;                              // 逆ポジション
+  return pc + 1 + ppos * 4;
 }
 function occultSeal(n) {
   return 21 - n;
