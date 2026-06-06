@@ -564,7 +564,30 @@ a { color: var(--gold-deep); }
   padding-bottom: 2px;
 }
 .reading-more-link:hover { color: var(--gold); }
-.reading-more-link--blog { display: flex; margin-top: 0.55rem; }
+/* ブログ誘導リンク（結果カード内）— ピル型で目立たせる */
+.reading-more-link--blog {
+  display: flex;
+  width: fit-content;
+  margin-top: 0.7rem;
+  padding: 0.5em 1.05em;
+  background: linear-gradient(135deg, #fffdf8 0%, var(--gold-pale) 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-full);
+  color: var(--gold-deep);
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(201,169,107,0.2);
+  transition: background .2s, color .2s, transform .15s, box-shadow .2s;
+}
+.reading-more-link--blog::before {
+  content: "✦";
+  font-size: 0.95em;
+}
+.reading-more-link--blog:hover {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 100%);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 20px rgba(201,169,107,0.34);
+}
 
 /* 結果CTA */
 .result-cta {
@@ -1138,11 +1161,45 @@ a { color: var(--gold-deep); }
 }
 .cta-btn--oracle:hover { box-shadow: 0 8px 22px rgba(201,169,107,0.4); }
 .cta-btn--blog {
-  background: #fff;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fffdf8 0%, var(--gold-pale) 100%);
   color: var(--gold-deep);
-  border: 1.5px solid var(--gold-pale);
+  border: 1.5px solid var(--gold);
+  font-weight: 600;
+  box-shadow: 0 4px 18px rgba(201,169,107,0.22);
 }
-.cta-btn--blog:hover { background: var(--gold-pale); }
+.cta-btn--blog::before {
+  content: "✦";
+  font-size: 0.95em;
+  line-height: 1;
+}
+/* 光沢シマー（定期的に光が走り目を引く） */
+.cta-btn--blog::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.85) 50%, transparent 100%);
+  transform: skewX(-22deg);
+  animation: blogShine 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes blogShine {
+  0%, 55% { left: -130%; }
+  100%    { left: 140%; }
+}
+.cta-btn--blog:hover {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 100%);
+  color: #fff;
+  border-color: var(--gold-deep);
+  box-shadow: 0 10px 28px rgba(201,169,107,0.42);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-btn--blog::after { animation: none; display: none; }
+}
 
 /* ──────────────────────────────────────────────
    フッター
