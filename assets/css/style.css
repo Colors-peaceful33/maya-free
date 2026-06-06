@@ -589,6 +589,36 @@ a { color: var(--gold-deep); }
   box-shadow: 0 7px 20px rgba(201,169,107,0.34);
 }
 
+/* KIN ORACLE 誘導バナー（診断結果） */
+.oracle-promo {
+  max-width: 760px;
+  margin: 2.6rem auto 0;
+  text-align: center;
+}
+.oracle-promo__caption {
+  margin: 0 0 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gold-deep);
+  letter-spacing: 0.02em;
+}
+.oracle-promo__link {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.oracle-promo__link:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.oracle-promo__link img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* 結果CTA */
 .result-cta {
   margin-top: 3rem;
