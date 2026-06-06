@@ -26,6 +26,29 @@ const SEAL_SLUGS = {
   '黄色い太陽':    'kiiroi-taiyou',
 };
 
+// ── マヤ暦の扉（ブログ）紋章記事 ─────────────────────────
+// 公開済みの紋章記事のみ。未公開の紋章はリンクを出さない。
+const BLOG_BASE = 'https://maya-kin-oracle.com/';
+const BLOG_SEAL_SLUGS = {
+  '赤い龍':        'red-dragon-maya',
+  '白い風':        'white-wind-maya',
+  '青い夜':        'blue-night-maya',
+  '黄色い種':      'yellow-seed-maya',
+  '赤い蛇':        'red-serpent-maya',
+  '白い世界の橋渡し': 'white-world-bridger-maya',
+  '青い手':        'blue-hand-maya',
+  '黄色い星':      'yellow-star-maya',
+  '白い犬':        'white-dog-maya',
+  '青い猿':        'blue-monkey-maya',
+  '黄色い人':      'yellow-human-maya',
+  '赤い空歩く人':  'red-skywalker-maya',
+  '白い魔法使い':  'white-wizard-maya',
+};
+function blogUrlForSeal(name) {
+  const slug = BLOG_SEAL_SLUGS[name];
+  return slug ? BLOG_BASE + slug + '/' : null;
+}
+
 // 紋章カラークラス
 const SEAL_COLOR_CLASS = {
   '赤': 'red', '白': 'white', '青': 'blue', '黄': 'yellow'
@@ -146,7 +169,7 @@ function setOracleCell(cellId, imgId, nameId, sealName, isSelf = false) {
 }
 
 // ── 解説テキスト設定 ─────────────────────────────────────
-function setReading(prefix, fullText, previewLen, moreHref, linkLabel) {
+function setReading(prefix, fullText, previewLen, moreHref, linkLabel, blogHref, blogLabel) {
   const preview = document.getElementById(`${prefix}-preview`);
   const full    = document.getElementById(`${prefix}-full`);
   if (!preview || !full) return;
@@ -167,6 +190,16 @@ function setReading(prefix, fullText, previewLen, moreHref, linkLabel) {
     link.className = 'reading-more-link';
     link.textContent = linkLabel || '詳細ページを見る →';
     full.appendChild(link);
+  }
+
+  if (blogHref) {
+    const blink = document.createElement('a');
+    blink.href = blogHref;
+    blink.className = 'reading-more-link reading-more-link--blog';
+    blink.target = '_blank';
+    blink.rel = 'noopener';
+    blink.textContent = blogLabel || 'マヤ暦の扉で詳しく読む →';
+    full.appendChild(blink);
   }
 }
 
@@ -270,8 +303,8 @@ function renderResult(year, month, day) {
 
   // ── ④ 解説テキスト ──
   const PREVIEW_LEN = 180;
-  setReading('seal-reading', SEAL_READINGS[sealName]  || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`,  `「${sealName}」の詳細ページを見る →`);
-  setReading('wave-reading', WAVESPELL_READINGS[wavespell] || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[wavespell]}.html`, `「${wavespell}」の詳細ページを見る →`);
+  setReading('seal-reading', SEAL_READINGS[sealName]  || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`,  `「${sealName}」の詳細ページを見る →`,  blogUrlForSeal(sealName),  `マヤ暦の扉で「${sealName}」をもっと深く読む →`);
+  setReading('wave-reading', WAVESPELL_READINGS[wavespell] || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[wavespell]}.html`, `「${wavespell}」の詳細ページを見る →`, blogUrlForSeal(wavespell), `マヤ暦の扉で「${wavespell}」をもっと深く読む →`);
   setReading('tone-reading', TONE_READINGS[tone]      || '', PREVIEW_LEN, null);
 
   // ── 表示切替 ──

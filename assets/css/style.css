@@ -564,6 +564,7 @@ a { color: var(--gold-deep); }
   padding-bottom: 2px;
 }
 .reading-more-link:hover { color: var(--gold); }
+.reading-more-link--blog { display: flex; margin-top: 0.55rem; }
 
 /* 結果CTA */
 .result-cta {
