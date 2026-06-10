@@ -33,6 +33,64 @@
   }
   </script>
 
+  <!-- Schema.org: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "無料マヤ暦診断",
+    "url": "https://maya-free.pages.dev/",
+    "inLanguage": "ja"
+  }
+  </script>
+
+  <!-- Schema.org: Organization + 監修者(Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "無料マヤ暦診断",
+    "url": "https://maya-free.pages.dev/",
+    "founder": {
+      "@type": "Person",
+      "name": "織和 佑",
+      "jobTitle": "霊視鑑定師・マヤ暦鑑定士・シータヒーラー",
+      "description": "8,000件以上のセッション実績を持つマヤ暦鑑定士。霊視鑑定師としての活動を経てマヤ暦と出会い、関係性の読み解きを得意とする。",
+      "knowsAbout": ["マヤ暦", "KIN番号", "太陽の紋章", "銀河の音", "霊視鑑定"]
+    }
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "マヤ暦とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "古代マヤ文明が用いた暦のひとつ「ツォルキン（神聖暦）」をもとにした占いです。13の音と20の紋章を組み合わせた260日周期で、生年月日からあなたの本質・才能・人生のテーマを読み解きます。" } },
+      { "@type": "Question", "name": "KIN番号はどうやって調べますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "生年月日があればすぐに分かります。ページ上部のフォームに年・月・日を選んで診断ボタンを押すだけで、あなたのKIN番号（1〜260）が自動で表示されます。計算も登録も不要です。" } },
+      { "@type": "Question", "name": "太陽の紋章とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "20種類ある紋章のうち、あなたが生まれ持つ表の性質を表すものです。赤い龍から黄色い太陽まであり、性格・才能・価値観の核となります。表に出やすい「あなたらしさ」と考えると分かりやすいです。" } },
+      { "@type": "Question", "name": "ウェイブスペル（紋章の裏）とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "太陽の紋章が「表の自分」なら、ウェイブスペルは無意識・潜在意識に流れる「裏のテーマ」です。人生で挑戦していく方向性や、心の奥のモチベーションを示します。" } },
+      { "@type": "Question", "name": "銀河の音とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "1〜13の数で表されるエネルギーの質です。同じ紋章でも音によって役割や行動パターンが変わり、仕事の才能や物事への向き合い方に影響します。" } },
+      { "@type": "Question", "name": "黒KINとは何ですか？縁起が悪いのですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "紋章と音が特定の関係にあるKINを「黒KIN」と呼びます。悪い意味ではなく、課題やカルマ的なテーマを通して大きく成長できる、学びの強いKINと捉えられています。" } },
+      { "@type": "Question", "name": "マヤ暦で相性はわかりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。ガイド・反対・神秘・類似などの関係性キンを見ることで、相手とのエネルギーの相性や関わり方のヒントが分かります。本診断では関係する紋章を一覧で確認できます。" } },
+      { "@type": "Question", "name": "マヤ暦は本当に当たるのですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "マヤ暦は占いの一種で、科学的に未来を保証するものではありません。ただ、自分の性質や才能を客観的に見つめ直すセルフ理解のツールとして、多くの方が気づきを得ています。" } },
+      { "@type": "Question", "name": "この診断は無料ですか？登録は必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "完全無料で、会員登録もメールアドレスの入力も不要です。生年月日を選ぶだけで、その場ですぐに結果をご覧いただけます。" } },
+      { "@type": "Question", "name": "いつの生年月日まで診断できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "1926年〜2026年の生年月日に対応しています。うるう年も正しく計算されますので、ご自身やご家族・大切な人のKINを安心してお調べいただけます。" } }
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -798,6 +856,59 @@
   </div>
 </section>
 
+<!-- ─── よくある質問 FAQ ─── -->
+<section class="faq-section" id="faq">
+  <div class="container container--narrow">
+    <div class="section-header">
+      <span class="section-header__en">FAQ</span>
+      <h2 class="section-header__ja">よくある質問</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-item__q">マヤ暦とは何ですか？</summary>
+        <div class="faq-item__a"><p>古代マヤ文明が用いた暦のひとつ「ツォルキン（神聖暦）」をもとにした占いです。13の音と20の紋章を組み合わせた260日周期で、生年月日からあなたの本質・才能・人生のテーマを読み解きます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">KIN番号はどうやって調べますか？</summary>
+        <div class="faq-item__a"><p>生年月日があればすぐに分かります。ページ上部のフォームに年・月・日を選んで診断ボタンを押すだけで、あなたのKIN番号（1〜260）が自動で表示されます。計算も登録も不要です。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">太陽の紋章とは何ですか？</summary>
+        <div class="faq-item__a"><p>20種類ある紋章のうち、あなたが生まれ持つ表の性質を表すものです。赤い龍から黄色い太陽まであり、性格・才能・価値観の核となります。表に出やすい「あなたらしさ」と考えると分かりやすいです。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">ウェイブスペル（紋章の裏）とは何ですか？</summary>
+        <div class="faq-item__a"><p>太陽の紋章が「表の自分」なら、ウェイブスペルは無意識・潜在意識に流れる「裏のテーマ」です。人生で挑戦していく方向性や、心の奥のモチベーションを示します。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">銀河の音とは何ですか？</summary>
+        <div class="faq-item__a"><p>1〜13の数で表されるエネルギーの質です。同じ紋章でも音によって役割や行動パターンが変わり、仕事の才能や物事への向き合い方に影響します。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">黒KINとは何ですか？縁起が悪いのですか？</summary>
+        <div class="faq-item__a"><p>紋章と音が特定の関係にあるKINを「黒KIN」と呼びます。悪い意味ではなく、課題やカルマ的なテーマを通して大きく成長できる、学びの強いKINと捉えられています。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">マヤ暦で相性はわかりますか？</summary>
+        <div class="faq-item__a"><p>はい。ガイド・反対・神秘・類似などの関係性キンを見ることで、相手とのエネルギーの相性や関わり方のヒントが分かります。本診断では関係する紋章を一覧で確認できます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">マヤ暦は本当に当たるのですか？</summary>
+        <div class="faq-item__a"><p>マヤ暦は占いの一種で、科学的に未来を保証するものではありません。ただ、自分の性質や才能を客観的に見つめ直すセルフ理解のツールとして、多くの方が気づきを得ています。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">この診断は無料ですか？登録は必要ですか？</summary>
+        <div class="faq-item__a"><p>完全無料で、会員登録もメールアドレスの入力も不要です。生年月日を選ぶだけで、その場ですぐに結果をご覧いただけます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__q">いつの生年月日まで診断できますか？</summary>
+        <div class="faq-item__a"><p>1926年〜2026年の生年月日に対応しています。うるう年も正しく計算されますので、ご自身やご家族・大切な人のKINを安心してお調べいただけます。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ─── フッター CTA ─── -->
 <section class="footer-cta">
   <div class="container footer-cta__inner">
@@ -827,9 +938,10 @@
       <a href="#diagnosis">診断する</a>
       <a href="#seals">20の紋章</a>
       <a href="tone.html">銀河の音</a>
+      <a href="#faq">よくある質問</a>
       <a href="https://kin-oracle.pages.dev/oracle.html" target="_blank" rel="noopener">KIN ORACLE</a>
     </nav>
-    <p class="site-footer__copy">&copy; 2025 KIN ORACLE Lite. All rights reserved.</p>
+    <p class="site-footer__copy">&copy; 2026 無料マヤ暦診断. All rights reserved.</p>
   </div>
 </footer>
 
