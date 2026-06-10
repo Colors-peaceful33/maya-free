@@ -1421,6 +1421,74 @@ a { color: var(--gold-deep); }
 }
 
 /* ──────────────────────────────────────────────
+   特殊KID解説ページ（黒KIN/拡張KIN/鏡KIN/チャクラ）
+   ────────────────────────────────────────────── */
+.topic-hero {
+  background:
+    radial-gradient(ellipse at 50% 0%, var(--gold-pale) 0%, transparent 58%),
+    var(--bg-base);
+  padding: clamp(3.5rem, 7vw, 6rem) 0 2.5rem;
+  text-align: center;
+}
+.topic-hero__eyebrow {
+  font-family: var(--font-en);
+  font-style: italic;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+.topic-hero__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--ink);
+  margin: 0.6rem 0 1.1rem;
+  letter-spacing: 0.04em;
+}
+.topic-hero__lead {
+  max-width: 660px;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  line-height: 2.05;
+  font-size: 0.95rem;
+}
+.topic-related {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 0;
+}
+.topic-related__card {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.topic-related__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--gold-pale);
+}
+.topic-related__en {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+.topic-related__name {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 0.2rem;
+}
+
+/* ──────────────────────────────────────────────
    レスポンシブ
    ────────────────────────────────────────────── */
 @media (max-width: 960px) {

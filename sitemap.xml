@@ -14,6 +14,27 @@
   </url>
 
   <url>
+    <loc>https://maya-free.pages.dev/special/kuro-kin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maya-free.pages.dev/special/kakucho-kin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maya-free.pages.dev/special/kagami-kin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maya-free.pages.dev/special/chakra.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://maya-free.pages.dev/seal/akai-ryu.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
