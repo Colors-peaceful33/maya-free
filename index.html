@@ -227,8 +227,16 @@
         <span class="result-info-box__val" id="result-black"></span>
       </div>
       <div class="result-info-box__row">
+        <span class="result-info-box__label">鏡KIN</span>
+        <span class="result-info-box__val" id="result-mirror-kin"></span>
+      </div>
+      <div class="result-info-box__row">
         <span class="result-info-box__label">鏡向KINグループ</span>
         <span class="result-info-box__val" id="result-mirror-group"></span>
+      </div>
+      <div class="result-info-box__row">
+        <span class="result-info-box__label">黒KIN</span>
+        <span class="result-info-box__val" id="result-kuro"></span>
       </div>
     </div>
 
@@ -358,6 +366,30 @@
         </div>
       </div>
     </div><!-- /.reading-cards -->
+
+    <!-- ④-2 人生年表 -->
+    <div class="reading-card nenpyo-card">
+      <div class="reading-card__head">
+        <span class="reading-card__icon">⌛</span>
+        <h3 class="reading-card__title">あなたの人生年表（KINの流れ）</h3>
+        <button class="reading-card__toggle" aria-expanded="false" aria-label="開閉">
+          <span class="reading-card__toggle-icon">+</span>
+        </button>
+      </div>
+      <div class="reading-card__body">
+        <p class="reading-card__preview">生まれてから1年ごとに巡るKINの流れです。<strong>拡張KIN・極性KIN</strong>に当たる年は、人生の転機やテーマが強く出やすい節目とされます。</p>
+        <div class="reading-card__full" id="nenpyo-full" hidden>
+          <div class="nenpyo-wrap">
+            <table class="nenpyo-table">
+              <thead>
+                <tr><th>年齢</th><th>西暦</th><th>KIN</th><th>太陽の紋章</th><th>音</th><th>節目</th></tr>
+              </thead>
+              <tbody id="nenpyo-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- KIN ORACLE 誘導バナー -->
     <div class="oracle-promo">

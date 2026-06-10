@@ -1992,6 +1992,59 @@ a { color: var(--gold-deep); }
   color: var(--ink);
   line-height: 1.6;
 }
+.result-info-box__val--kuro {
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+
+/* ── 人生年表テーブル ── */
+.nenpyo-card .reading-card__preview strong { color: var(--gold-deep); }
+.nenpyo-wrap {
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+.nenpyo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-num);
+  font-size: 0.84rem;
+}
+.nenpyo-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-soft);
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+  z-index: 1;
+}
+.nenpyo-table td {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.nenpyo-table tbody tr:hover { background: var(--bg-soft); }
+.nenpyo-row--mark td { background: var(--gold-pale); }
+.nenpyo-row--mark:hover td { background: var(--gold-pale); }
+.nenpyo-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold-deep);
+  background: #fff;
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-full);
+  padding: 0.1rem 0.6rem;
+  letter-spacing: 0.04em;
+}
 
 /* ── オラクルグリッドセクション ── */
 .result-oracle-section {

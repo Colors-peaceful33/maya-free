@@ -1,5 +1,5 @@
 // KIN ORACLE Lite — app.js
-import { calcKin, getKinData, SEAL_NAMES } from './maya-calc.js';
+import { calcKin, getKinData, getNenpyoRows, SEAL_NAMES } from './maya-calc.js';
 import { SEAL_READINGS, WAVESPELL_READINGS, TONE_READINGS } from './reading-texts.js';
 
 // ── 紋章スラッグ対応表 ──────────────────────────────────
@@ -203,6 +203,29 @@ function setReading(prefix, fullText, previewLen, moreHref, linkLabel, blogHref,
   }
 }
 
+// ── 人生年表の描画 ───────────────────────────────────────
+function renderNenpyo(year, month, day, baseKin) {
+  const body = document.getElementById('nenpyo-body');
+  if (!body) return;
+  const rows = getNenpyoRows(year, month, day, 101); // 0〜100歳
+  body.innerHTML = '';
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    if (r.label) tr.className = 'nenpyo-row--mark';
+    const labelCell = r.label
+      ? `<span class="nenpyo-tag">${r.label}</span>`
+      : '';
+    tr.innerHTML =
+      `<td>${r.age}</td>` +
+      `<td>${r.year}</td>` +
+      `<td>KIN${r.kin}</td>` +
+      `<td>${r.solar_seal || ''}</td>` +
+      `<td>音${r.tone || ''}</td>` +
+      `<td>${labelCell}</td>`;
+    body.appendChild(tr);
+  });
+}
+
 // ── 結果描画 ─────────────────────────────────────────────
 function renderResult(year, month, day) {
   let kin;
@@ -269,10 +292,29 @@ function renderResult(year, month, day) {
   document.getElementById('result-soul-kin').textContent =
     souls.map(k => `KIN${k}`).join('・');
 
+  // 鏡KIN（単独：261-KIN）
+  const mirrorKin  = data.mirror_kin;
+  const mirrorData = getKinData(mirrorKin);
+  document.getElementById('result-mirror-kin').textContent =
+    mirrorData ? `KIN${mirrorKin}　${mirrorData.solar_seal}` : `KIN${mirrorKin}`;
+
   // 鏡向KINグループ
   const mirrors = mirrorKinGroup(kin);
   document.getElementById('result-mirror-group').textContent =
     mirrors.map(k => `KIN${k}`).join('・');
+
+  // 黒KIN 該当判定
+  const kuroEl = document.getElementById('result-kuro');
+  if (data.is_kuro) {
+    kuroEl.textContent = '該当します（学び・成長のテーマが強いKIN）';
+    kuroEl.classList.add('result-info-box__val--kuro');
+  } else {
+    kuroEl.textContent = '該当しません';
+    kuroEl.classList.remove('result-info-box__val--kuro');
+  }
+
+  // ── 人生年表 ──
+  renderNenpyo(year, month, day, kin);
 
   // ── ③ オラクルグリッド ──
   if (sealNum) {
@@ -329,35 +371,11 @@ function initAccordion() {
   });
 }
 
-// ── FAQ アコーディオン ─────────────────────────────────────
-function initFaqAccordion() {
-  document.querySelectorAll('.faq-item__q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-item__a');
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-      document.querySelectorAll('.faq-item').forEach(it => {
-        if (it !== item) {
-          it.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
-          it.querySelector('.faq-item__a').hidden = true;
-          it.classList.remove('faq-item--open');
-        }
-      });
-
-      btn.setAttribute('aria-expanded', !isOpen);
-      answer.hidden = isOpen;
-      item.classList.toggle('faq-item--open', !isOpen);
-    });
-  });
-}
-
 // ── メイン処理 ────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initYearSelect();
   initDaySelect();
   initAccordion();
-  initFaqAccordion();
 
   // 診断フォーム送信
   const form = document.getElementById('diagnosis-form');
