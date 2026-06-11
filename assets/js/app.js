@@ -38,11 +38,18 @@ const BLOG_SEAL_SLUGS = {
   '白い世界の橋渡し': 'white-world-bridger-maya',
   '青い手':        'blue-hand-maya',
   '黄色い星':      'yellow-star-maya',
+  '赤い月':        'red-moon-maya',
   '白い犬':        'white-dog-maya',
   '青い猿':        'blue-monkey-maya',
   '黄色い人':      'yellow-human-maya',
   '赤い空歩く人':  'red-skywalker-maya',
   '白い魔法使い':  'white-wizard-maya',
+  '青い鷲':        'blue-eagle-maya',
+  '黄色い戦士':    'yellow-warrior-maya',
+  '赤い地球':      'red-earth-maya',
+  '白い鏡':        'white-mirror-maya',
+  '青い嵐':        'blue-storm-maya',
+  '黄色い太陽':    'yellow-sun-maya',
 };
 function blogUrlForSeal(name) {
   const slug = BLOG_SEAL_SLUGS[name];
@@ -347,7 +354,7 @@ function renderResult(year, month, day) {
   const PREVIEW_LEN = 180;
   setReading('seal-reading', SEAL_READINGS[sealName]  || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[sealName]}.html`,  `「${sealName}」の詳細ページを見る →`,  blogUrlForSeal(sealName),  `マヤ暦の扉で「${sealName}」をもっと深く読む →`);
   setReading('wave-reading', WAVESPELL_READINGS[wavespell] || '', PREVIEW_LEN, `seal/${SEAL_SLUGS[wavespell]}.html`, `「${wavespell}」の詳細ページを見る →`, blogUrlForSeal(wavespell), `マヤ暦の扉で「${wavespell}」をもっと深く読む →`);
-  setReading('tone-reading', TONE_READINGS[tone]      || '', PREVIEW_LEN, null);
+  setReading('tone-reading', TONE_READINGS[tone]      || '', PREVIEW_LEN, `tone/on-${tone}.html`, `「音${tone}」の詳細ページを見る →`);
 
   // ── 表示切替 ──
   document.getElementById('result-area').hidden = false;
