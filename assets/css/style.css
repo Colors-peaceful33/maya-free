@@ -1467,6 +1467,16 @@ a { color: var(--gold-deep); }
   text-decoration: none;
   transition: transform .2s, box-shadow .2s, border-color .2s;
 }
+.topic-related__img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin: 0 auto 0.6rem;
+}
+.topic-related__card--center {
+  text-align: center;
+}
 .topic-related__card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
