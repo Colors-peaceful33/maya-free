@@ -292,8 +292,8 @@ function renderResult(year, month, day) {
   document.getElementById('result-soul-kin').textContent =
     souls.map(k => `KIN${k}`).join('・');
 
-  // 鏡KIN（単独：261-KIN）
-  const mirrorKin  = data.mirror_kin;
+  // 鏡の向こうKIN（261 − KIN）
+  const mirrorKin  = 261 - kin;
   const mirrorData = getKinData(mirrorKin);
   document.getElementById('result-mirror-kin').textContent =
     mirrorData ? `KIN${mirrorKin}　${mirrorData.solar_seal}` : `KIN${mirrorKin}`;
@@ -309,7 +309,7 @@ function renderResult(year, month, day) {
     kuroEl.textContent = '該当します（学び・成長のテーマが強いKIN）';
     kuroEl.classList.add('result-info-box__val--kuro');
   } else {
-    kuroEl.textContent = '該当しません';
+    kuroEl.textContent = '該当なし';
     kuroEl.classList.remove('result-info-box__val--kuro');
   }
 
